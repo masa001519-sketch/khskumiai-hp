@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHS協同組合 | 建設特化・育成就労 / 特定技能</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Design System -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#003366',
+                            gold: '#D4AF37',
+                            light: '#F8FAFC',
+                            gray: '#475569',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ニュースリストの下線 */
+        .news-item {
+            border-bottom: 1px dashed #E2E8F0;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        /* ヒーロー画像の斜めカットエフェクト（PCのみ） */
+        @media (min-width: 768px) {
+            .hero-clip {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+            }
+        }
+
+        /* フォトストリップ 無限スクロール */
+        @keyframes photoScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .photo-strip {
+            animation: photoScroll 32s linear infinite;
+        }
+
+        .photo-strip-wrapper:hover .photo-strip {
+            animation-play-state: paused;
+        }
+
+        /* カウントアップ */
+        .stat-num {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* スクロール出現アニメーション */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-up.delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .fade-up.delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .fade-up.delay-3 {
+            transition-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white antialiased flex flex-col min-h-screen">
+
+    <!-- ヘッダー -->
+    <header class="fixed top-0 left-0 right-0 bg-white/98 backdrop-blur-md z-50 shadow-sm border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 border-b border-brand-border/40">
+                <!-- ロゴ -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="flex flex-col">
+                        <span class="text-brand-navy font-black text-xl tracking-tight leading-none">KHS協同組合</span>
+                        <span class="text-brand-gold text-[9px] font-en font-bold tracking-widest mt-0.5">NEW ERA OF HR
+                            SYSTEMS</span>
+                    </div>
+                </a>
+
+                <!-- PCナビゲーション -->
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a href="training-system.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors">育成就労制度</a>
+                    <span class="text-brand-border">|</span>
+                    <a href="specified-skills.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors">特定技能</a>
+                    <span class="text-brand-border">|</span>
+                    <a href="acceptance.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors">受入れの流れ</a>
+                    <span class="text-brand-border">|</span>
+                    <a href="cases.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors">事例紹介</a>
+                    <span class="text-brand-border">|</span>
+                    <a href="compliance.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors">法令遵守</a>
+                    <span class="text-brand-border">|</span>
+                    <a href="about.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors">組合概要</a>
+                    <span class="text-brand-border">|</span>
+                    <a href="documents.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors">書類DL</a>
+                </nav>
+
+                <!-- 右側: 電話 + CTA -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:0480000000"
+                        class="text-lg font-en font-black text-brand-navy flex items-center gap-1.5 hover:text-brand-gold transition-colors">
+                        <svg width="18" height="18" class="text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" />
+                        </svg>
+                        048-000-0000
+                    </a>
+                    <a href="#contact"
+                        class="bg-brand-navy text-white px-5 py-2.5 rounded-md font-bold text-sm hover:bg-brand-gold transition-colors shadow-md">
+                        お問い合わせ
+                    </a>
+                </div>
+
+                <!-- モバイルメニューボタン -->
+                <button id="mobileMenuBtn" class="lg:hidden text-brand-navy p-2">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- モバイルメニュー（開閉） -->
+            <div id="mobileMenu" class="lg:hidden hidden py-4 border-t border-brand-border/40">
+                <nav class="flex flex-col gap-1">
+                    <a href="training-system.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold">育成就労制度</a>
+                    <a href="specified-skills.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold">特定技能</a>
+                    <a href="acceptance.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold">受入れの流れ</a>
+                    <a href="cases.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold">事例紹介</a>
+                    <a href="compliance.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold">法令遵守</a>
+                    <a href="about.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold">組合概要</a>
+                    <a href="documents.html"
+                        class="px-3 py-2 text-sm font-bold text-brand-navy hover:text-brand-gold">書類DL</a>
+                    <a href="#contact"
+                        class="mt-2 mx-3 bg-brand-navy text-white text-center py-2.5 rounded-md font-bold text-sm">お問い合わせ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- (モバイルメニューボタンは上のヘッダー構造に統合済み) -->
+    <button class="lg:hidden text-brand-navy p-2 hidden">
+        <svg width="32" height="32" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+    </div>
+    </header>
+
+    <!-- メインビジュアル (ヒーローセクション) -->
+    <section class="pt-16 bg-brand-navy flex-1 flex flex-col justify-center min-h-[85vh]">
+        <div class="max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-stretch h-full">
+            <!-- 左：キャッチコピー -->
+            <div class="flex-1 px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex flex-col justify-center bg-brand-navy z-10 relative">
+                <div
+                    class="inline-block bg-white text-brand-navy px-4 py-1.5 rounded-full text-xs font-bold border border-brand-border mb-6 w-max shadow-sm">
+                    育成就労制度×建設業特化サポート
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.3] md:leading-[1.2] mb-8">
+                    建築現場に、<br>
+                    <span class="text-brand-gold">確かな戦力</span>と<br>
+                    安心のサポートを。
+                </h1>
+                <p class="text-sm sm:text-base lg:text-lg text-white/80 font-medium leading-relaxed mb-10 max-w-lg">
+                    「誠実・堅実・安心」をモットーに。<br>
+                    労働力確保を明確な目的とした「育成就労」と「特定技能」に完全フォーカスし、企業様と外国人材がともに成長できる環境づくりを支えます。
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services"
+                        class="bg-brand-gold text-white px-8 py-4 rounded-md font-bold text-sm sm:text-base hover:bg-yellow-600 transition-colors shadow-lg flex items-center gap-2">
+                        制度について詳しく見る
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 右：写真 -->
+            <div class="w-full h-64 sm:h-80 md:h-auto md:flex-1 relative">
+                <!-- 高品質な建築・ビジネスイメージ -->
+                <img src="image/hero.jpg"
+                    alt="建設現場の信頼感" class="w-full h-full object-cover hero-clip shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- フォトギャラリーは下部に移動しました -->
+
+    <!-- メインコンテンツエリア (2カラムレイアウト) -->
+    <div class="bg-brand-light py-12 lg:py-20 border-y border-brand-border relative">
+        <!-- 背景装飾用の斜線パターン（オプション） -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #003366 0, #003366 1px, transparent 1px, transparent 10px);"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-10 relative z-10">
+            
+            <!-- 左サイドバー (約25%) -->
+            <aside class="hidden lg:block w-full lg:w-72 shrink-0">
+                <div class="sticky top-24 space-y-6">
+                    <!-- メニュー -->
+                    <div class="bg-white rounded-lg border border-brand-border shadow-sm overflow-hidden fade-up">
+                    <div class="bg-brand-navy text-white font-bold py-4 px-5 tracking-widest font-en uppercase text-center border-b-[3px] border-brand-gold">
+                        Contents
+                    </div>
+                    <nav class="flex flex-col text-sm">
+                        <a href="training-system.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">
+                            育成就労制度
+                            <svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="specified-skills.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">
+                            特定技能
+                            <svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="acceptance.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">
+                            受入れの流れ
+                            <svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="cases.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">
+                            事例紹介
+                            <svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="compliance.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">
+                            法令遵守
+                            <svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="about.html" class="px-5 py-4 text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">
+                            組合概要
+                            <svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- バナー類 -->
+                <div class="space-y-4 fade-up delay-1">
+                    <a href="#contact" class="flex items-center gap-4 bg-brand-navy text-white rounded-lg p-5 hover:bg-brand-gold transition-colors shadow-md group">
+                        <div class="bg-white/10 p-3 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-lg leading-tight mb-0.5">お問い合わせ</span>
+                            <span class="block text-[10px] text-white/70">ご相談・お見積りはこちら</span>
+                        </div>
+                    </a>
+                    
+                    <a href="documents.html" class="flex items-center gap-4 bg-white border border-brand-border text-brand-navy rounded-lg p-5 hover:border-brand-gold transition-colors shadow-sm group">
+                        <div class="bg-brand-light p-3 rounded-md group-hover:bg-brand-gold/10 transition-colors">
+                            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-lg leading-tight mb-0.5">資料ダウンロード</span>
+                            <span class="block text-[10px] text-brand-gray">パンフレット・各種書類</span>
+                        </div>
+                    </a>
+                </div>
+                </div>
+            </aside>
+
+            <!-- 右メインコンテンツ (約75%) -->
+            <main class="flex-1 space-y-12">
+                
+                <!-- News Section -->
+                <section id="news" class="bg-white rounded-lg border border-brand-border shadow-sm p-6 sm:p-10 fade-up">
+                    <div class="flex flex-wrap justify-between items-end mb-8 border-b-2 border-brand-navy pb-4 gap-4">
+                        <h2 class="text-2xl font-black text-brand-navy">お知らせ <span class="text-sm font-en text-brand-gray font-normal ml-2">News</span></h2>
+                        <a href="news.html" class="text-sm text-brand-navy font-bold hover:text-brand-gold transition-colors flex items-center">
+                            一覧を見る
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    
+                    <div id="news-list" class="space-y-1">
+                        <div class="py-8 text-center text-brand-gray font-medium text-sm">
+                            <svg class="animate-spin h-5 w-5 text-brand-navy mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            最新情報を読み込んでいます...
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section id="services" class="fade-up delay-1">
+                    <div class="mb-8 border-b-2 border-brand-navy pb-4">
+                        <h2 class="text-2xl font-black text-brand-navy">当組合の3つの柱 <span class="text-sm font-en text-brand-gray font-normal ml-2 uppercase tracking-widest">Our Services</span></h2>
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- カード 1 -->
+                        <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col">
+                            <div class="h-40 overflow-hidden relative border-b border-brand-light">
+                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_1_1776311133285.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <span class="text-brand-gold text-[10px] font-bold mb-2 block">基礎から即戦力へ</span>
+                                <h3 class="text-lg font-bold text-brand-navy mb-3">育成就労制度</h3>
+                                <p class="text-brand-gray text-xs leading-relaxed mb-5 flex-1">
+                                    旧技能実習から代わる新制度。実践的な現場スキルと日本語能力を育成し、即戦力へと引き上げる伴走型のサポートを行います。
+                                </p>
+                                <a href="training-system.html" class="inline-flex items-center text-brand-navy font-bold text-xs hover:text-brand-gold transition-colors">
+                                    仕組みを見る
+                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- カード 2 -->
+                        <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col">
+                            <div class="h-40 overflow-hidden relative border-b border-brand-light">
+                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_2_1776311148803.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <span class="text-brand-gold text-[10px] font-bold mb-2 block">育成就労のゴール</span>
+                                <h3 class="text-lg font-bold text-brand-navy mb-3">特定技能へ移行</h3>
+                                <p class="text-brand-gray text-xs leading-relaxed mb-5 flex-1">
+                                    最長5年間活躍できる「特定技能水準」へのシームレスな移行を実現。最初から特定技能として受入れるプログラムもご用意。
+                                </p>
+                                <a href="specified-skills.html" class="inline-flex items-center text-brand-navy font-bold text-xs hover:text-brand-gold transition-colors">
+                                    詳細を見る
+                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- カード 3 -->
+                        <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col sm:col-span-2 lg:col-span-1">
+                            <div class="h-40 overflow-hidden relative border-b border-brand-light">
+                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_3_1776311164218.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <span class="text-brand-gold text-[10px] font-bold mb-2 block">選ばれる理由</span>
+                                <h3 class="text-lg font-bold text-brand-navy mb-3">誠実・堅実な支援</h3>
+                                <p class="text-brand-gray text-xs leading-relaxed mb-5 flex-1">
+                                    法令遵守を第一とした厳正な監査と定期的な巡回。母国語対応スタッフを配置し、企業と人材間のコミュニケーションを強力に支援。
+                                </p>
+                                <a href="acceptance.html#follow" class="inline-flex items-center text-brand-navy font-bold text-xs hover:text-brand-gold transition-colors">
+                                    サポート内容
+                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Strengths Section (Boxed) -->
+                <section id="strengths" class="bg-brand-navy rounded-xl p-8 sm:p-10 shadow-lg relative overflow-hidden fade-up">
+                    <div class="relative z-10">
+                        <div class="mb-8">
+                            <span class="text-brand-gold font-en font-bold tracking-widest text-[10px] block mb-2 uppercase">Why Choose Us</span>
+                            <h2 class="text-2xl font-black text-white mb-2">他の組合にはない、3つの強み</h2>
+                            <div class="w-12 h-1 bg-brand-gold"></div>
+                        </div>
+                        <div class="space-y-6">
+                            <!-- 強み1 -->
+                            <div class="bg-white/5 border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors flex flex-col sm:flex-row gap-6 items-start">
+                                <div class="w-14 h-14 shrink-0 bg-brand-gold/20 border border-brand-gold rounded-lg flex items-center justify-center">
+                                    <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-black text-white mb-2">建設業特化</h3>
+                                    <p class="text-white/70 font-medium text-sm leading-relaxed">
+                                        建設業のみに絞り込んだ専門知識。建設キャリアアップシステム（CCUS）への対応、職種別の独自カリキュラム、現場監督との連携など、業種特化だからこそできる手厚いサポートを提供します。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- 強み2 -->
+                            <div class="bg-white/5 border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors flex flex-col sm:flex-row gap-6 items-start">
+                                <div class="w-14 h-14 shrink-0 bg-brand-gold/20 border border-brand-gold rounded-lg flex items-center justify-center">
+                                    <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-black text-white mb-2">教育の質</h3>
+                                    <p class="text-white/70 font-medium text-sm leading-relaxed">
+                                        入国前から始まる日本語・技能教育、入国後の現場OJT、定期的な技能評価まで。母国語対応スタッフが常駐し、生活面のサポートも含めた「育てる」体制を持ちます。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- 強み3 -->
+                            <div class="bg-white/5 border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors flex flex-col sm:flex-row gap-6 items-start">
+                                <div class="w-14 h-14 shrink-0 bg-brand-gold/20 border border-brand-gold rounded-lg flex items-center justify-center">
+                                    <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-black text-white mb-2">コンプライアンス体制</h3>
+                                    <p class="text-white/70 font-medium text-sm leading-relaxed">
+                                        外部監査法人による定期監査を実施。入管法・建設業法への完全準拠を第一に、企業様が安心して受入れを継続できる透明性の高い運営を貫きます。トラブル時も24時間体制で対応。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section id="stats" class="bg-white rounded-lg border border-brand-border p-8 shadow-sm fade-up delay-2">
+                    <div class="mb-8 border-b-2 border-brand-navy pb-4">
+                        <h2 class="text-2xl font-black text-brand-navy">数字で見る実績 <span class="text-sm font-en text-brand-gray font-normal ml-2 uppercase tracking-widest">Our Track Record</span></h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="bg-brand-light p-6 rounded-lg text-center border border-brand-border">
+                            <div class="text-brand-gold text-[10px] font-en font-black tracking-widest mb-2 uppercase">Trainees</div>
+                            <div class="text-4xl font-black text-brand-navy mb-1 stat-num">
+                                <span class="stat-counter" data-target="152">0</span><span class="text-brand-gold text-2xl">名</span>
+                            </div>
+                            <p class="text-brand-gray text-xs font-medium">累計受入れ人数</p>
+                        </div>
+                        <div class="bg-brand-light p-6 rounded-lg text-center border border-brand-border">
+                            <div class="text-brand-gold text-[10px] font-en font-black tracking-widest mb-2 uppercase">Countries</div>
+                            <div class="text-4xl font-black text-brand-navy mb-1 stat-num">
+                                <span class="stat-counter" data-target="4">0</span><span class="text-brand-gold text-2xl">カ国</span>
+                            </div>
+                            <p class="text-brand-gray text-xs font-medium">送出実績国数</p>
+                        </div>
+                        <div class="bg-brand-light p-6 rounded-lg text-center border border-brand-border">
+                            <div class="text-brand-gold text-[10px] font-en font-black tracking-widest mb-2 uppercase">Audits</div>
+                            <div class="text-4xl font-black text-brand-navy mb-1 stat-num">
+                                <span class="stat-counter" data-target="480">0</span><span class="text-brand-gold text-2xl">件</span>
+                            </div>
+                            <p class="text-brand-gray text-xs font-medium">監査・巡回実施数</p>
+                        </div>
+                        <div class="bg-brand-light p-6 rounded-lg text-center border border-brand-border">
+                            <div class="text-brand-gold text-[10px] font-en font-black tracking-widest mb-2 uppercase">Years</div>
+                            <div class="text-4xl font-black text-brand-navy mb-1 stat-num">
+                                <span class="stat-counter" data-target="8">0</span><span class="text-brand-gold text-2xl">年</span>
+                            </div>
+                            <p class="text-brand-gray text-xs font-medium">建設業への専門的関与</p>
+                        </div>
+                    </div>
+                    <p class="text-right text-[10px] text-brand-gray mt-4 font-medium">※2026年4月時点の実績。累計は全制度の合計。</p>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- News Fetch Script for Main Content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const newsList = document.getElementById('news-list');
+            if(!newsList) return;
+
+            const SERVICE_DOMAIN = ''; 
+            const ENDPOINT = 'news';   
+            const API_KEY = '';        
+
+            const fetchMockData = () => {
+                return [
+                    { id: '1', publishedAt: '2026-04-15', category: { name: 'お知らせ', color: 'bg-brand-navy' }, title: '育成就労制度の基本要件に関する無料オンライン相談を開始しました。' },
+                    { id: '2', publishedAt: '2026-04-01', category: { name: '重要', color: 'bg-red-700' }, title: '外国人の受入れ制度移行に伴う、当組合の対応方針について' },
+                    { id: '3', publishedAt: '2026-03-20', category: { name: 'お知らせ', color: 'bg-brand-navy' }, title: '建設特化型の新カリキュラムがメディアに掲載されました。' },
+                ];
+            };
+
+            try {
+                let data;
+                if (!SERVICE_DOMAIN || !API_KEY) {
+                    data = fetchMockData();
+                    await new Promise(r => setTimeout(r, 600)); 
+                } else {
+                    const response = await fetch(`https://${SERVICE_DOMAIN}.microcms.io/api/v1/${ENDPOINT}?limit=5`, {
+                        headers: { 'X-MICROCMS-API-KEY': API_KEY }
+                    });
+                    if (!response.ok) throw new Error('Network error');
+                    const json = await response.json();
+                    data = json.contents;
+                }
+
+                newsList.innerHTML = '';
+                if (data.length === 0) {
+                    newsList.innerHTML = '<div class="py-8 text-center text-brand-gray text-sm">現在お知らせはありません。</div>';
+                    return;
+                }
+
+                data.forEach(item => {
+                    const dateObj = new Date(item.publishedAt);
+                    const dateStr = `${dateObj.getFullYear()}.${String(dateObj.getMonth() + 1).padStart(2, '0')}.${String(dateObj.getDate()).padStart(2, '0')}`;
+                    const catName = item.category?.name || 'お知らせ';
+                    const catColor = item.category?.color || 'bg-brand-navy';
+
+                    const html = `
+                        <a href="news.html?id=${item.id}" class="news-item flex flex-col sm:flex-row sm:items-center py-4 border-b border-dashed border-brand-border hover:bg-brand-light transition-colors group px-2 -mx-2 rounded-sm">
+                            <div class="flex items-center gap-3 w-full sm:w-auto sm:min-w-[180px] mb-2 sm:mb-0">
+                                <time class="text-brand-gray font-en text-xs tracking-widest">${dateStr}</time>
+                                <span class="text-[10px] font-bold text-white px-2 py-0.5 rounded-sm shadow-sm ${catColor}">${catName}</span>
+                            </div>
+                            <h3 class="text-brand-navy font-bold text-sm leading-snug group-hover:text-brand-gold transition-colors flex-1">${item.title}</h3>
+                        </a>
+                    `;
+                    newsList.insertAdjacentHTML('beforeend', html);
+                });
+            } catch (error) {
+                console.error('Failed to fetch news:', error);
+                newsList.innerHTML = '<div class="py-8 text-center text-red-600 font-bold text-sm">お知らせの取得に失敗しました。</div>';
+            }
+        });
+    </script>
+
+    <!-- フォトギャラリー（自動スクロール） -->
+    <section class="py-12 bg-white overflow-hidden relative border-t border-brand-border">
+        <!-- 左右フェードオーバーレイ -->
+        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10"
+            style="background: linear-gradient(to right, white, transparent);"></div>
+        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10"
+            style="background: linear-gradient(to left, white, transparent);"></div>
+
+        <!-- ラベル -->
+        <div class="text-center mb-8 relative z-20">
+            <span class="text-brand-gold text-xs font-en font-black tracking-[0.4em] uppercase">Our Daily Work</span>
+            <p class="text-brand-gray text-xs mt-1 font-medium">実習風景</p>
+        </div>
+
+        <!-- スクロールトラック -->
+        <div class="photo-strip-wrapper relative z-10" style="overflow: hidden;">
+            <div class="photo-strip flex gap-5 w-max" id="photoStrip">
+                <!-- 写真カード（1周目） -->
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/8345c383-d116-4f91-9589-6974527a9605/gallery_interview_1776648505621.png"
+                        alt="面談・相談サポート"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">
+                        面談・相談サポート</div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+                        alt="現場巡回・指導"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">現場巡回・指導
+                    </div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/8345c383-d116-4f91-9589-6974527a9605/gallery_audit_1776648584261.png"
+                        alt="監査・コンプライアンス確認"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">
+                        監査・コンプライアンス確認</div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/8345c383-d116-4f91-9589-6974527a9605/gallery_team_photo_1776648599749.png"
+                        alt="実習生と組合スタッフ"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">
+                        実習生と組合スタッフ</div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1581578735808-eb8abf2a5635?auto=format&fit=crop&w=600&q=80"
+                        alt="技能訓練・スキルアップ"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">
+                        技能訓練・スキルアップ</div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=600&q=80"
+                        alt="日本語・生活指導"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">日本語・生活指導
+                    </div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=600&q=80"
+                        alt="建設現場での協働"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">建設現場での協働
+                    </div>
+                </div>
+
+                <!-- 同じ写真をもう1周（シームレスループ用） -->
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/8345c383-d116-4f91-9589-6974527a9605/gallery_interview_1776648505621.png"
+                        alt="面談・相談サポート"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">
+                        面談・相談サポート</div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+                        alt="現場巡回・指導"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">現場巡回・指導
+                    </div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/8345c383-d116-4f91-9589-6974527a9605/gallery_audit_1776648584261.png"
+                        alt="監査・コンプライアンス確認"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">
+                        監査・コンプライアンス確認</div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/8345c383-d116-4f91-9589-6974527a9605/gallery_team_photo_1776648599749.png"
+                        alt="実習生と組合スタッフ"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">
+                        実習生と組合スタッフ</div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1581578735808-eb8abf2a5635?auto=format&fit=crop&w=600&q=80"
+                        alt="技能訓練・スキルアップ"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">
+                        技能訓練・スキルアップ</div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=600&q=80"
+                        alt="日本語・生活指導"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">日本語・生活指導
+                    </div>
+                </div>
+                <div class="photo-card shrink-0 w-72 h-48 overflow-hidden rounded-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=600&q=80"
+                        alt="建設現場での協働"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/10 transition-colors duration-500">
+                    </div>
+                    <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">建設現場での協働
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-brand-navy text-white pt-20 pb-8 border-t-[12px] border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- 組合情報 -->
+                <div class="col-span-2">
+                    <h2 class="text-2xl font-black mb-6 tracking-wide">KHS協同組合</h2>
+                    <p class="text-white/80 text-sm leading-relaxed mb-8">
+                        〒330-0000<br>
+                        埼玉県さいたま市大宮区〇〇 1-2-3<br>
+                        TEL: <span class="font-en">048-000-0000</span> / FAX: <span
+                            class="font-en">048-000-0001</span><br>
+                        <span
+                            class="mt-4 text-xs font-bold tracking-widest inline-block text-white/60 bg-black/20 px-3 py-1 rounded-sm">監理団体許可番号：許2400000000
+                            <span class="mx-3">|</span> 登録支援機関登録番号：24登-000000</span>
+                    </p>
+                    <a href="#contact"
+                        class="inline-flex items-center bg-white text-brand-navy px-8 py-3 rounded-sm font-bold hover:bg-brand-gold hover:text-white transition-all shadow-md">
+                        メールでお問い合わせ
+                    </a>
+                </div>
+
+                <!-- リンク群 -->
+                <div>
+                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">組合について</h3>
+                    <ul class="space-y-4 text-sm text-white/80 font-medium">
+                        <li><a href="about.html" class="hover:text-brand-gold transition-colors block">組合概要</a></li>
+                        <li><a href="access.html" class="hover:text-brand-gold transition-colors block">アクセス</a></li>
+                        <li><a href="recruit.html" class="hover:text-brand-gold transition-colors block">採用情報</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">事業内容</h3>
+                    <ul class="space-y-4 text-sm text-white/80 font-medium">
+                        <li><a href="training-system.html"
+                                class="hover:text-brand-gold transition-colors block">育成就労制度のご案内</a></li>
+                        <li><a href="specified-skills.html"
+                                class="hover:text-brand-gold transition-colors block">特定技能のご案内</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-gold transition-colors block">よくあるご質問</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-medium">
+                <div class="mb-4 md:mb-0 space-x-6">
+                    <a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a>
+                    <a href="links.html" class="hover:text-white transition-colors">リンク集</a>
+                </div>
+                <p class="font-en tracking-wider">&copy; 2026 KHS Cooperative Association. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルメニュー開閉
+        const btn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        if (btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+        // スクロール出現アニメーション
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        fadeEls.forEach(el => fadeObserver.observe(el));
+
+        // カウントアップアニメーション
+        const counters = document.querySelectorAll('.stat-counter');
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                const duration = 1800;
+                const start = performance.now();
+                const update = (now) => {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.floor(eased * target);
+                    if (progress < 1) requestAnimationFrame(update);
+                    else el.textContent = target;
+                };
+                requestAnimationFrame(update);
+                countObserver.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(el => countObserver.observe(el));
+    </script>
+</body>
+
+</html>

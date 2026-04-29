@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外国人技能実習制度について | KHS協同組合</title>
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#003366',
+                            gold: '#D4AF37',
+                            light: '#F8FAFC',
+                            gray: '#475569',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: white; color: #003366; line-height: 2.0; }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.04em; line-height: 1.2; }
+        .layout-main { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 2rem; padding-right: 2rem; }
+        @media (min-width: 768px) { .layout-main { padding-left: 3rem; padding-right: 3rem; } }
+        @media (min-width: 1024px) { .layout-main { padding-left: 5rem; padding-right: 5rem; } }
+        .section-macro { padding-top: 6rem; padding-bottom: 6rem; }
+        @media (min-width: 768px) { .section-macro { padding-top: 10rem; padding-bottom: 10rem; } }
+        .reveal {
+            opacity: 0; transform: translateY(40px);
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .editorial-table th { background-color: rgba(0, 51, 102, 0.05); padding: 1.5rem; text-align: left; font-weight: 900; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid rgba(0, 51, 102, 0.1); width: 33.333%; }
+        .editorial-table td { padding: 1.5rem; border-bottom: 1px solid rgba(0, 51, 102, 0.1); font-size: 1.125rem; }
+    </style>
+</head>
+<body class="overflow-x-hidden font-sans">
+
+    <!-- Header (Same as index) -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 shadow-sm border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- ロゴ -->
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex flex-col">
+                    <span class="text-brand-navy font-black text-2xl tracking-tight leading-none">KHS協同組合</span>
+                    <span class="text-brand-gold text-[10px] font-en font-bold tracking-widest mt-1">NEW ERA OF HR SYSTEMS</span>
+                </div>
+            </a>
+            
+            <!-- PCナビゲーション -->
+            <div class="hidden lg:flex items-center gap-8">
+                <!-- 電話番号 -->
+                <div class="flex flex-col items-end">
+                    <span class="text-[10px] text-brand-gray font-bold mb-1">お電話でのご相談・資料請求はこちら</span>
+                    <a href="tel:0480000000" class="text-2xl font-en font-black text-brand-navy flex items-center gap-2 hover:text-brand-gold transition-colors">
+                        <svg width="24" height="24" class="w-6 h-6 text-brand-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 00-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/></svg>
+                        048-000-0000
+                    </a>
+                </div>
+                <!-- お問い合わせボタン -->
+                <a href="#contact" class="bg-brand-navy text-white px-8 py-4 rounded-md font-bold hover:bg-brand-gold transition-colors shadow-md flex items-center gap-2">
+                    お問い合わせ
+                    <svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            
+            <!-- モバイルメニューボタン -->
+            <button class="lg:hidden text-brand-navy p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sub Page Hero -->
+    <section class="pt-40 pb-20 bg-brand-navy flex items-end border-b border-brand-navy/10 text-white">
+        <div class="layout-main w-full">
+            <div class="reveal">
+                <div class="text-brand-gold text-xs font-black mb-6 uppercase tracking-[0.5em]">The System</div>
+                <h1 class="text-4xl md:text-6xl font-black mb-8">外国人技能実習制度について</h1>
+                <div class="h-1 bg-brand-gold w-24"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About System -->
+    <section class="section-macro bg-white border-t border-slate-100">
+        <div class="layout-main reveal">
+            <div class="grid lg:grid-cols-2 gap-24">
+                <div>
+                    <h2 class="text-3xl md:text-4xl mb-12">技能実習制度の目的</h2>
+                    <p class="text-lg md:text-xl text-brand-navy/70 mb-12 italic">
+                        「技能実習制度は、我が国で開発され培われた技能、技術又は知識の開発途上地域等への移転を図り、その地域等の経済発展を担う『人づくり』に協力することを目的とする制度です。」
+                    </p>
+                    <p class="text-brand-navy/70">
+                        この国際協力という基本理念のもと、KHS協同組合では、貴社の現場が「技術継承の学び舎」となるよう、最適なマッチングとサポートを提供しています。
+                    </p>
+                </div>
+                <div class="h-full min-h-[400px] bg-brand-navy grayscale opacity-30">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revision -->
+    <section id="revision" class="section-macro bg-brand-navy text-white">
+        <div class="layout-main reveal">
+            <div class="mb-20">
+                <div class="h-1 bg-white/20 w-24 mb-8"></div>
+                <h2 class="text-4xl md:text-5xl font-black">実習制度の改訂について</h2>
+            </div>
+            <div class="max-w-3xl">
+                <p class="text-xl md:text-2xl text-white/50 leading-loose mb-12">
+                    2024年、歴史的な「育成就労制度」への移行が決定されました。<br>
+                    これは単なる名称の変更ではなく、人材不足という日本の建設業界が直面する課題に対し、より長期的なキャリア形成（特定技能へのスムーズな移行）を前提とした抜本的な改革です。
+                </p>
+                <div class="border-l-4 border-brand-gold pl-8 py-4">
+                    <p class="font-bold text-white">当組合では、これら最新の制度改訂に完全対応したアドバイザリー業務を実施しております。貴社が円滑に新制度へシフトできるよう、専任スタッフが全行程をサポートいたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slots / Capacity -->
+    <section class="section-macro bg-white">
+        <div class="layout-main reveal">
+            <h2 class="text-3xl md:text-5xl mb-24 text-center">受入れ人数枠</h2>
+            <div class="border border-brand-navy/10 overflow-x-auto">
+                <table class="editorial-table w-full">
+                    <tbody>
+                        <tr>
+                            <th>常勤職員数 30人以下</th>
+                            <td>実習生 3人まで</td>
+                        </tr>
+                        <tr>
+                            <th>31人 〜 40人</th>
+                            <td>実習生 4人まで</td>
+                        </tr>
+                        <tr>
+                            <th>41人 〜 50人</th>
+                            <td>実習生 5人まで</td>
+                        </tr>
+                        <tr>
+                            <th>51人 〜 100人</th>
+                            <td>実習生 6人まで</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="bg-brand-navy/5 text-sm p-8 text-brand-navy/50">
+                                ※建設分野においては、上記に加え「受入れ人数が常勤職員総数を超えないこと」という独自の制限があります（優良基準を満たす場合は緩和措置あり）。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index) -->
+    <footer class="bg-brand-navy text-white pt-20 pb-8 border-t-[12px] border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- 組合情報 -->
+                <div class="col-span-2">
+                    <h2 class="text-2xl font-black mb-6 tracking-wide">KHS協同組合</h2>
+                    <p class="text-white/80 text-sm leading-relaxed mb-8">
+                        〒330-0000<br>
+                        埼玉県さいたま市大宮区〇〇 1-2-3<br>
+                        TEL: <span class="font-en">048-000-0000</span> / FAX: <span class="font-en">048-000-0001</span>
+                    </p>
+                    <a href="#contact" class="inline-flex items-center bg-white text-brand-navy px-8 py-3 rounded-sm font-bold hover:bg-brand-gold hover:text-white transition-all shadow-md">
+                        メールでお問い合わせ
+                    </a>
+                </div>
+                
+                <!-- リンク群 -->
+                <div>
+                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">組合について</h3>
+                    <ul class="space-y-4 text-sm text-white/80 font-medium">
+                        <li><a href="about.html" class="hover:text-brand-gold transition-colors block">組合概要</a></li>
+                        <li><a href="access.html" class="hover:text-brand-gold transition-colors block">アクセス</a></li>
+                        <li><a href="recruit.html" class="hover:text-brand-gold transition-colors block">採用情報</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">事業内容</h3>
+                    <ul class="space-y-4 text-sm text-white/80 font-medium">
+                        <li><a href="training-system.html" class="hover:text-brand-gold transition-colors block">育成就労制度のご案内</a></li>
+                        <li><a href="specified-skills.html" class="hover:text-brand-gold transition-colors block">特定技能のご案内</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-gold transition-colors block">よくあるご質問</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-medium">
+                <div class="mb-4 md:mb-0 space-x-6">
+                    <a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a>
+                    <a href="links.html" class="hover:text-white transition-colors">リンク集</a>
+                </div>
+                <p class="font-en tracking-wider">&copy; 2026 KHS Cooperative Association. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
+            }, { threshold: 0.1 });
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

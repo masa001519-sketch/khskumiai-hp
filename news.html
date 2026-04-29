@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュース・お知らせ | KHS協同組合</title>
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#003366',
+                            gold: '#D4AF37',
+                            light: '#F8FAFC',
+                            gray: '#475569',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: white; color: #003366; line-height: 2.0; }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.04em; line-height: 1.2; }
+        .layout-main { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 2rem; padding-right: 2rem; }
+        @media (min-width: 768px) { .layout-main { padding-left: 3rem; padding-right: 3rem; } }
+        @media (min-width: 1024px) { .layout-main { padding-left: 5rem; padding-right: 5rem; } }
+        .section-macro { padding-top: 6rem; padding-bottom: 6rem; }
+        @media (min-width: 768px) { .section-macro { padding-top: 10rem; padding-bottom: 10rem; } }
+        .reveal {
+            opacity: 0; transform: translateY(40px);
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .news-item { display: flex; flex-direction: column; border-bottom: 1px solid rgba(0, 51, 102, 0.1); padding-top: 3rem; padding-bottom: 3rem; gap: 2rem; }
+        @media (min-width: 768px) { .news-item { flex-direction: row; } }
+    </style>
+</head>
+<body class="overflow-x-hidden font-sans">
+
+    <!-- Header (Consistent) -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 shadow-sm border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- ロゴ -->
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex flex-col">
+                    <span class="text-brand-navy font-black text-2xl tracking-tight leading-none">KHS協同組合</span>
+                    <span class="text-brand-gold text-[10px] font-en font-bold tracking-widest mt-1">NEW ERA OF HR SYSTEMS</span>
+                </div>
+            </a>
+            
+            <!-- PCナビゲーション -->
+            <div class="hidden lg:flex items-center gap-8">
+                <!-- 電話番号 -->
+                <div class="flex flex-col items-end">
+                    <span class="text-[10px] text-brand-gray font-bold mb-1">お電話でのご相談・資料請求はこちら</span>
+                    <a href="tel:0480000000" class="text-2xl font-en font-black text-brand-navy flex items-center gap-2 hover:text-brand-gold transition-colors">
+                        <svg width="24" height="24" class="w-6 h-6 text-brand-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 00-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/></svg>
+                        048-000-0000
+                    </a>
+                </div>
+                <!-- お問い合わせボタン -->
+                <a href="#contact" class="bg-brand-navy text-white px-8 py-4 rounded-md font-bold hover:bg-brand-gold transition-colors shadow-md flex items-center gap-2">
+                    お問い合わせ
+                    <svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            
+            <!-- モバイルメニューボタン -->
+            <button class="lg:hidden text-brand-navy p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="pt-40 pb-20 bg-brand-navy flex items-end border-b border-brand-navy/10 text-white">
+        <div class="layout-main w-full">
+            <div class="reveal">
+                <div class="text-brand-gold text-xs font-black mb-6 uppercase tracking-[0.5em]">Latest Updates</div>
+                <h1 class="text-4xl md:text-6xl font-black mb-8">ニュース・お知らせ</h1>
+                <div class="h-1 bg-brand-gold w-24"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News List -->
+    <section class="section-macro">
+        <div class="layout-main">
+            <div class="flex flex-col reveal">
+                <!-- item 1 -->
+                <a href="#" class="news-item">
+                    <span class="text-xl font-black text-brand-navy/30 md:w-48">2026.04.09</span>
+                    <div class="flex-1">
+                        <span class="inline-block bg-brand-navy text-white text-[10px] px-3 font-bold mb-4 uppercase tracking-[0.2em]">Info</span>
+                        <h3 class="text-2xl font-black mb-4">育成就労制度への移行に向けた弊組合の対応方針について</h3>
+                        <p class="text-brand-navy/60">制度の改訂に伴う組合員企業様への説明会の開催スケジュールを公開しました。</p>
+                    </div>
+                </a>
+                <!-- item 2 (PDFテスト) -->
+                <a href="sample_document.pdf" class="news-item">
+                    <span class="text-xl font-black text-brand-navy/30 md:w-48">2026.03.25</span>
+                    <div class="flex-1">
+                        <span class="inline-block bg-brand-gold text-white text-[10px] px-3 font-bold mb-4 uppercase tracking-[0.2em]">Notice</span>
+                        <h3 class="text-2xl font-black mb-4">ゴールデンウィーク期間中の事務局休業のお知らせ</h3>
+                        <p class="text-brand-navy/60">誠に勝手ながら、4月29日から5月5日までの期間、事務局を休業とさせていただきます。</p>
+                    </div>
+                </a>
+                <!-- item 3 -->
+                <a href="#" class="news-item">
+                    <span class="text-xl font-black text-brand-navy/30 md:w-48">2026.02.10</span>
+                    <div class="flex-1">
+                        <span class="inline-block bg-brand-navy text-white text-[10px] px-3 font-bold mb-4 uppercase tracking-[0.2em]">Support</span>
+                        <h3 class="text-2xl font-black mb-4">第48期 技能実習生の新規受入れ実績を更新しました</h3>
+                        <p class="text-brand-navy/60">今期は新たに50名の人材が日本国内の建設現場で実習を開始いたしました。</p>
+                    </div>
+                </a>
+                <!-- item 4 -->
+                <a href="#" class="news-item border-none">
+                    <span class="text-xl font-black text-brand-navy/30 md:w-48">2026.01.05</span>
+                    <div class="flex-1">
+                        <span class="inline-block bg-brand-navy text-white text-[10px] px-3 font-bold mb-4 uppercase tracking-[0.2em]">Update</span>
+                        <h3 class="text-2xl font-black mb-4">代表理事のご挨拶：持続可能な建設業界の未来へ</h3>
+                        <p class="text-brand-navy/70">新年のご挨拶とともに、当組合の長期ビジョンを公開いたしました。</p>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Pagination Placeholder -->
+            <div class="mt-32 border-t-8 border-brand-navy pt-12 flex justify-end">
+                <a href="#" class="text-xl font-black hover:text-brand-gold transition-colors">OLD NEWS —</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-20 pb-8 border-t-[12px] border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- 組合情報 -->
+                <div class="col-span-2">
+                    <h2 class="text-2xl font-black mb-6 tracking-wide">KHS協同組合</h2>
+                    <p class="text-white/80 text-sm leading-relaxed mb-8">
+                        〒330-0000<br>
+                        埼玉県さいたま市大宮区〇〇 1-2-3<br>
+                        TEL: <span class="font-en">048-000-0000</span> / FAX: <span class="font-en">048-000-0001</span><br>
+                        <span class="mt-4 text-xs font-bold tracking-widest inline-block text-white/60 bg-black/20 px-3 py-1 rounded-sm">監理団体許可番号：許2400000000 <span class="mx-3">|</span> 登録支援機関登録番号：24登-000000</span>
+                    </p>
+                    <a href="#contact" class="inline-flex items-center bg-white text-brand-navy px-8 py-3 rounded-sm font-bold hover:bg-brand-gold hover:text-white transition-all shadow-md">
+                        メールでお問い合わせ
+                    </a>
+                </div>
+                
+                <!-- リンク群 -->
+                <div>
+                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">組合について</h3>
+                    <ul class="space-y-4 text-sm text-white/80 font-medium">
+                        <li><a href="about.html" class="hover:text-brand-gold transition-colors block">組合概要</a></li>
+                        <li><a href="access.html" class="hover:text-brand-gold transition-colors block">アクセス</a></li>
+                        <li><a href="recruit.html" class="hover:text-brand-gold transition-colors block">採用情報</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">事業内容</h3>
+                    <ul class="space-y-4 text-sm text-white/80 font-medium">
+                        <li><a href="training-system.html" class="hover:text-brand-gold transition-colors block">育成就労制度のご案内</a></li>
+                        <li><a href="specified-skills.html" class="hover:text-brand-gold transition-colors block">特定技能のご案内</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-gold transition-colors block">よくあるご質問</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-medium">
+                <div class="mb-4 md:mb-0 space-x-6">
+                    <a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a>
+                    <a href="links.html" class="hover:text-white transition-colors">リンク集</a>
+                </div>
+                <p class="font-en tracking-wider">&copy; 2026 KHS Cooperative Association. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
+            }, { threshold: 0.1 });
+            reveals.forEach(el => observer.observe(el));
+
+            // PDFリンクに対する自動アイコン付与処理
+            const links = document.querySelectorAll('a[href$=".pdf"]');
+            links.forEach(link => {
+                const pdfIcon = document.createElement('span');
+                pdfIcon.innerHTML = `<svg class="w-5 h-5 ml-2 inline-block text-brand-gold align-text-bottom drop-shadow-sm" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>`;
+                link.appendChild(pdfIcon);
+                // マウスオーバー時に色を変えるなど、PDF特有のクラスを付与
+                link.classList.add('pdf-link');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>組合加入について | KHS協同組合</title>
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#003366',
+                            gold: '#D4AF37',
+                            light: '#F8FAFC',
+                            gray: '#475569',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: white; color: #003366; line-height: 2.0; }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.04em; line-height: 1.2; }
+        .layout-main { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 2rem; padding-right: 2rem; }
+        @media (min-width: 768px) { .layout-main { padding-left: 3rem; padding-right: 3rem; } }
+        @media (min-width: 1024px) { .layout-main { padding-left: 5rem; padding-right: 5rem; } }
+        .section-macro { padding-top: 6rem; padding-bottom: 6rem; }
+        @media (min-width: 768px) { .section-macro { padding-top: 10rem; padding-bottom: 10rem; } }
+        .reveal {
+            opacity: 0; transform: translateY(40px);
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .join-step { position: relative; padding-bottom: 6rem; border-bottom: 1px solid rgba(0, 51, 102, 0.1); display: flex; flex-direction: column; gap: 3rem; align-items: baseline; }
+        @media (min-width: 768px) { .join-step { flex-direction: row; } }
+    </style>
+</head>
+<body class="overflow-x-hidden font-sans">
+
+    <!-- Header (Consistent) -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 shadow-sm border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- ロゴ -->
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex flex-col">
+                    <span class="text-brand-navy font-black text-2xl tracking-tight leading-none">KHS協同組合</span>
+                    <span class="text-brand-gold text-[10px] font-en font-bold tracking-widest mt-1">NEW ERA OF HR SYSTEMS</span>
+                </div>
+            </a>
+            
+            <!-- PCナビゲーション -->
+            <div class="hidden lg:flex items-center gap-8">
+                <!-- 電話番号 -->
+                <div class="flex flex-col items-end">
+                    <span class="text-[10px] text-brand-gray font-bold mb-1">お電話でのご相談・資料請求はこちら</span>
+                    <a href="tel:0480000000" class="text-2xl font-en font-black text-brand-navy flex items-center gap-2 hover:text-brand-gold transition-colors">
+                        <svg width="24" height="24" class="w-6 h-6 text-brand-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 00-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/></svg>
+                        048-000-0000
+                    </a>
+                </div>
+                <!-- お問い合わせボタン -->
+                <a href="#contact" class="bg-brand-navy text-white px-8 py-4 rounded-md font-bold hover:bg-brand-gold transition-colors shadow-md flex items-center gap-2">
+                    お問い合わせ
+                    <svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            
+            <!-- モバイルメニューボタン -->
+            <button class="lg:hidden text-brand-navy p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="pt-40 pb-20 bg-brand-navy flex items-end border-b border-brand-navy/10 text-white">
+        <div class="layout-main w-full">
+            <div class="reveal">
+                <div class="text-brand-gold text-xs font-black mb-6 uppercase tracking-[0.5em]">Membership</div>
+                <h1 class="text-4xl md:text-6xl font-black mb-8">組合加入について</h1>
+                <div class="h-1 bg-brand-gold w-24"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Benefits -->
+    <section class="section-macro">
+        <div class="layout-main">
+            <div class="grid lg:grid-cols-2 gap-24 items-start reveal">
+                <div>
+                    <h2 class="text-4xl md:text-5xl mb-12 leading-tight">共に歩み、<br>共に繁栄する。</h2>
+                    <p class="text-xl text-brand-navy/60 leading-loose mb-12">
+                        KHS協同組合は、建設業界の持続可能な発展を目的とした相互扶助の組織です。外国人材の受入れだけでなく、経営情報の共有や福利厚生の充実など、組合員企業様の安定経営を多角的にサポートします。
+                    </p>
+                    <div class="h-[12px] bg-brand-navy w-48 mb-12"></div>
+                </div>
+                <div class="bg-brand-navy/5 p-12 md:p-16">
+                    <h3 class="text-2xl font-black mb-8">加入資格</h3>
+                    <ul class="space-y-6 text-lg font-bold">
+                        <li class="flex gap-4 items-start"><span class="text-brand-gold">■</span> 建設業を営む事業者であること</li>
+                        <li class="flex gap-4 items-start"><span class="text-brand-gold">■</span> 組合の地区内に事業所を有すること</li>
+                        <li class="flex gap-4 items-start"><span class="text-brand-gold">■</span> 当組合の理念に賛同し、定款を遵守できること</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section-macro bg-white border-t border-slate-100">
+        <div class="layout-main reveal">
+            <div class="mb-32">
+                <h2 class="text-3xl md:text-5xl font-black italic text-center">加入までの手続き</h2>
+            </div>
+            <div class="space-y-16 max-w-5xl mx-auto">
+                <div class="join-step">
+                    <span class="w-24 text-4xl font-black text-brand-navy/10">01</span>
+                    <div class="flex-1">
+                        <h4 class="text-2xl font-black mb-4 tracking-tighter">お問い合わせ・資料請求</h4>
+                        <p class="text-brand-navy/60">まずはWEBまたはお電話にて、加入をご検討されている旨をご連絡ください。</p>
+                    </div>
+                </div>
+                <div class="join-step">
+                    <span class="w-24 text-4xl font-black text-brand-navy/10">02</span>
+                    <div class="flex-1">
+                        <h4 class="text-2xl font-black mb-4 tracking-tighter">事業内容・定款の説明</h4>
+                        <p class="text-brand-navy/60">弊組合の担当者が貴社へ伺い（またはWEBにて）、事業の詳細と規約についてご説明いたします。</p>
+                    </div>
+                </div>
+                <div class="join-step border-none">
+                    <span class="w-24 text-4xl font-black text-brand-navy/10">03</span>
+                    <div class="flex-1">
+                        <h4 class="text-2xl font-black mb-4 tracking-tighter">加入承諾・出資金の払込み</h4>
+                        <p class="text-brand-navy/60">理事会での承認後、所定の出資金をお払込みいただき、組合員としての活動がスタートします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section-macro bg-brand-navy text-white text-center">
+        <div class="layout-main reveal">
+            <h2 class="text-3xl md:text-5xl mb-12 font-black italic">新たな仲間を、お待ちしています</h2>
+            <p class="text-white/40 mb-20 text-xl font-bold">詳しい資料の送付や、個別のご説明を承っております。</p>
+            <a href="index.html#consultation" class="inline-flex items-center justify-center bg-brand-gold text-white font-black px-16 py-8 text-xl tracking-widest hover:brightness-110 active:scale-95 transition-all">お問い合わせ・資料請求</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-20 pb-8 border-t-[12px] border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- 組合情報 -->
+                <div class="col-span-2">
+                    <h2 class="text-2xl font-black mb-6 tracking-wide">KHS協同組合</h2>
+                    <p class="text-white/80 text-sm leading-relaxed mb-8">
+                        〒330-0000<br>
+                        埼玉県さいたま市大宮区〇〇 1-2-3<br>
+                        TEL: <span class="font-en">048-000-0000</span> / FAX: <span class="font-en">048-000-0001</span><br>
+                        <span class="mt-4 text-xs font-bold tracking-widest inline-block text-white/60 bg-black/20 px-3 py-1 rounded-sm">監理団体許可番号：許2400000000 <span class="mx-3">|</span> 登録支援機関登録番号：24登-000000</span>
+                    </p>
+                    <a href="#contact" class="inline-flex items-center bg-white text-brand-navy px-8 py-3 rounded-sm font-bold hover:bg-brand-gold hover:text-white transition-all shadow-md">
+                        メールでお問い合わせ
+                    </a>
+                </div>
+                
+                <!-- リンク群 -->
+                <div>
+                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">組合について</h3>
+                    <ul class="space-y-4 text-sm text-white/80 font-medium">
+                        <li><a href="about.html" class="hover:text-brand-gold transition-colors block">組合概要</a></li>
+                        <li><a href="access.html" class="hover:text-brand-gold transition-colors block">アクセス</a></li>
+                        <li><a href="recruit.html" class="hover:text-brand-gold transition-colors block">採用情報</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">事業内容</h3>
+                    <ul class="space-y-4 text-sm text-white/80 font-medium">
+                        <li><a href="training-system.html" class="hover:text-brand-gold transition-colors block">育成就労制度のご案内</a></li>
+                        <li><a href="specified-skills.html" class="hover:text-brand-gold transition-colors block">特定技能のご案内</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-gold transition-colors block">よくあるご質問</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-medium">
+                <div class="mb-4 md:mb-0 space-x-6">
+                    <a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a>
+                    <a href="links.html" class="hover:text-white transition-colors">リンク集</a>
+                </div>
+                <p class="font-en tracking-wider">&copy; 2026 KHS Cooperative Association. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
+            }, { threshold: 0.1 });
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
