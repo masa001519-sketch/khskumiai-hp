@@ -20,9 +20,7 @@ function renderHeader() {
                     <span class="text-brand-gold text-[9px] font-en font-bold tracking-widest mt-0.5">NEW ERA OF HR SYSTEMS</span>
                 </a>
                 <nav class="hidden lg:flex items-center gap-1 text-sm font-bold">
-                    <a href="training-system.html" class="${getLinkClass('training-system.html')}">育成就労制度</a><span class="text-brand-border">|</span>
-                    <a href="specified-skills.html" class="${getLinkClass('specified-skills.html')}">特定技能</a><span class="text-brand-border">|</span>
-                    <a href="acceptance.html" class="${getLinkClass('acceptance.html')}">受入れの流れ</a><span class="text-brand-border">|</span>
+                    <a href="system.html" class="${getLinkClass('system.html')}">制度と受入れの流れ</a><span class="text-brand-border">|</span>
                     <a href="cases.html" class="${getLinkClass('cases.html')}">事例紹介</a><span class="text-brand-border">|</span>
                     <a href="compliance.html" class="${getLinkClass('compliance.html')}">法令遵守</a><span class="text-brand-border">|</span>
                     <a href="about.html" class="${getLinkClass('about.html')}">組合概要</a><span class="text-brand-border">|</span>
@@ -36,9 +34,7 @@ function renderHeader() {
             </div>
             <div id="mobileMenu" class="lg:hidden hidden py-4">
                 <nav class="flex flex-col gap-1 text-sm font-bold">
-                    <a href="training-system.html" class="${getLinkClass('training-system.html')}">育成就労制度</a>
-                    <a href="specified-skills.html" class="${getLinkClass('specified-skills.html')}">特定技能</a>
-                    <a href="acceptance.html" class="${getLinkClass('acceptance.html')}">受入れの流れ</a>
+                    <a href="system.html" class="${getLinkClass('system.html')}">制度と受入れの流れ</a>
                     <a href="cases.html" class="${getLinkClass('cases.html')}">事例紹介</a>
                     <a href="compliance.html" class="${getLinkClass('compliance.html')}">法令遵守</a>
                     <a href="about.html" class="${getLinkClass('about.html')}">組合概要</a>
@@ -76,9 +72,7 @@ function renderSidebar() {
                     Contents
                 </div>
                 <nav class="flex flex-col text-sm">
-                    <a href="training-system.html" class="${getLinkClass('training-system.html')}">育成就労制度<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-                    <a href="specified-skills.html" class="${getLinkClass('specified-skills.html')}">特定技能<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-                    <a href="acceptance.html" class="${getLinkClass('acceptance.html')}">受入れの流れ<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+                    <a href="system.html" class="${getLinkClass('system.html')}">制度と受入れの流れ<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
                     <a href="cases.html" class="${getLinkClass('cases.html')}">事例紹介<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
                     <a href="compliance.html" class="${getLinkClass('compliance.html')}">法令遵守<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
                     <a href="about.html" class="${getLinkClass('about.html')}">組合概要<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>

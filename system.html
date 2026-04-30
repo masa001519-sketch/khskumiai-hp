@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外国人材受入れ制度と流れ | KHS協同組合</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0F3B66',
+                            gold: '#F2B705',
+                            light: '#F5F7FA',
+                            gray: '#475569',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F5F7FA; color: #0F3B66; line-height: 2.0; }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 100ms; }
+        html { scroll-padding-top: 100px; }
+    </style>
+</head>
+<body class="bg-[#F5F7FA] text-brand-navy font-sans antialiased">
+
+    <!-- Header -->
+    <div id="app-header"></div>
+
+    <!-- Page Hero -->
+    <section class="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-brand-navy border-b-[8px] border-[#F2B705] text-white relative">
+        <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 20px);"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center fade-up">
+            <span class="text-[#F2B705] font-en font-black tracking-[0.3em] text-sm mb-4 block uppercase">System & Flow</span>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight">
+                育成と特定技能でつくる、<br>長期的な「現場の戦力」
+            </h1>
+            <p class="text-white/80 font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                短期的な人員補充ではなく、数年先を見据えた組織づくりへ。建設業に特化した当組合が、貴社の状況に最適な受入れプランをご提案します。
+            </p>
+        </div>
+    </section>
+
+    <!-- ページ内ナビゲーション -->
+    <div class="bg-white border-b border-brand-border sticky top-[64px] z-40 shadow-sm hidden md:block">
+        <div class="max-w-6xl mx-auto px-4">
+            <nav class="flex justify-between text-sm font-bold overflow-x-auto">
+                <a href="#sec-overview" class="py-4 px-2 text-brand-gray hover:text-brand-navy border-b-[3px] border-transparent hover:border-brand-navy transition-all whitespace-nowrap">全体像</a>
+                <a href="#sec-training" class="py-4 px-2 text-brand-gray hover:text-brand-navy border-b-[3px] border-transparent hover:border-brand-navy transition-all whitespace-nowrap">育成就労</a>
+                <a href="#sec-specified" class="py-4 px-2 text-brand-gray hover:text-brand-navy border-b-[3px] border-transparent hover:border-brand-navy transition-all whitespace-nowrap">特定技能</a>
+                <a href="#sec-compare" class="py-4 px-2 text-brand-gray hover:text-brand-navy border-b-[3px] border-transparent hover:border-brand-navy transition-all whitespace-nowrap">比較表</a>
+                <a href="#sec-flow" class="py-4 px-2 text-brand-gray hover:text-brand-navy border-b-[3px] border-transparent hover:border-brand-navy transition-all whitespace-nowrap">受入れの流れ</a>
+                <a href="#sec-model" class="py-4 px-2 text-brand-gray hover:text-brand-navy border-b-[3px] border-transparent hover:border-brand-navy transition-all whitespace-nowrap">提案モデル</a>
+                <a href="#sec-construction" class="py-4 px-2 text-brand-gray hover:text-brand-navy border-b-[3px] border-transparent hover:border-brand-navy transition-all whitespace-nowrap">建設業特化</a>
+                <a href="#sec-faq" class="py-4 px-2 text-brand-gray hover:text-brand-navy border-b-[3px] border-transparent hover:border-brand-navy transition-all whitespace-nowrap">FAQ</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="py-16 lg:py-24 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-24">
+
+            <!-- ② 制度の全体像 -->
+            <section id="sec-overview" class="bg-white rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 shadow-lg fade-up">
+                <div class="mb-12 border-b-4 border-brand-navy pb-5 text-center">
+                    <h2 class="text-4xl sm:text-5xl font-black text-brand-navy tracking-tight leading-tight">制度の全体像</h2>
+                </div>
+                <div class="flex flex-col items-center max-w-2xl mx-auto space-y-4 relative">
+                    <div class="w-full bg-[#E8F1FA] border-2 border-brand-navy rounded-[14px] p-4 text-center">
+                        <span class="font-black text-xl text-brand-navy">海外人材</span>
+                    </div>
+                    <svg class="w-8 h-8 text-brand-navy shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    <div class="w-full bg-white border-2 border-[#F2B705] rounded-[14px] p-6 text-center shadow-md">
+                        <span class="text-[#F2B705] font-bold text-sm mb-1 block">基礎から育てる3年間</span>
+                        <span class="font-black text-2xl text-brand-navy">育成就労（教育・育成）</span>
+                    </div>
+                    <svg class="w-8 h-8 text-brand-navy shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    <div class="w-full bg-white border-2 border-[#F2B705] rounded-[14px] p-6 text-center shadow-md">
+                        <span class="text-[#F2B705] font-bold text-sm mb-1 block">最長5年間の活躍</span>
+                        <span class="font-black text-2xl text-brand-navy">特定技能（即戦力）</span>
+                    </div>
+                    <svg class="w-8 h-8 text-brand-navy shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    <div class="w-full bg-brand-navy text-white rounded-[14px] p-6 text-center shadow-lg">
+                        <span class="font-black text-3xl">長期戦力化へ</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ③ 育成就労制度 -->
+            <section id="sec-training" class="bg-[#E8F1FA] rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 shadow-lg fade-up">
+                <div class="mb-10 border-b-4 border-brand-navy pb-5">
+                    <span class="text-brand-gold font-en font-bold tracking-widest text-xs mb-2 block uppercase">Training System</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight leading-tight">育成就労制度（旧 技能実習）</h2>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="w-full lg:w-[60%] space-y-6">
+                        <p class="text-brand-navy/80 font-medium leading-relaxed">
+                            旧技能実習制度に代わる新制度です。「労働力の確保」と「人材の育成」を明確な目的とし、3年間の就労を通じて「特定技能」への移行を目指します。基礎からじっくり育てたい企業様に最適です。
+                        </p>
+                        <div class="bg-white rounded-xl border border-brand-border overflow-hidden shadow-sm">
+                            <table class="w-full text-left text-sm">
+                                <tbody>
+                                    <tr class="border-b border-brand-border">
+                                        <th class="bg-brand-light py-4 px-6 w-[30%] font-bold text-brand-navy">目的</th>
+                                        <td class="py-4 px-6 font-medium text-brand-gray">基礎スキルと日本語能力の育成</td>
+                                    </tr>
+                                    <tr class="border-b border-brand-border">
+                                        <th class="bg-brand-light py-4 px-6 font-bold text-brand-navy">即戦力性</th>
+                                        <td class="py-4 px-6 font-medium text-brand-gray">低〜中（現場でのOJTが必須）</td>
+                                    </tr>
+                                    <tr class="border-b border-brand-border">
+                                        <th class="bg-brand-light py-4 px-6 font-bold text-brand-navy">教育の必要性</th>
+                                        <td class="py-4 px-6 font-medium text-brand-gray">高（指導員による手厚いサポート）</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg-brand-light py-4 px-6 font-bold text-brand-navy">長期性</th>
+                                        <td class="py-4 px-6 font-medium text-brand-gray">3年（特定技能移行でさらに+5年）</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pt-2">
+                            <a href="training-system.html" class="inline-flex items-center text-brand-navy font-bold text-lg border-b-[3px] border-[#F2B705] hover:text-[#D9A404] transition-colors pb-1 group">
+                                育成就労について詳しく見る
+                                <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-[40%] rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=800&q=80" alt="研修風景" class="w-full h-full object-cover min-h-[250px]">
+                    </div>
+                </div>
+            </section>
+
+            <!-- ④ 特定技能 -->
+            <section id="sec-specified" class="bg-white rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 shadow-lg border border-brand-border fade-up">
+                <div class="mb-10 border-b-4 border-brand-navy pb-5">
+                    <span class="text-brand-gold font-en font-bold tracking-widest text-xs mb-2 block uppercase">Specified Skilled Worker</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight leading-tight">特定技能</h2>
+                </div>
+                
+                <div class="flex flex-col-reverse lg:flex-row gap-10">
+                    <div class="w-full lg:w-[40%] rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="現場作業風景" class="w-full h-full object-cover min-h-[250px]">
+                    </div>
+                    <div class="w-full lg:w-[60%] space-y-6">
+                        <p class="text-brand-navy/80 font-medium leading-relaxed">
+                            一定の専門性と技能を有し、即戦力として現場で活躍できる外国人材を受け入れる制度です。育成就労からの移行、または試験合格者が対象となり、最長5年の就労が可能です。
+                        </p>
+                        <div class="bg-[#F5F7FA] rounded-xl border border-brand-border overflow-hidden shadow-sm">
+                            <table class="w-full text-left text-sm">
+                                <tbody>
+                                    <tr class="border-b border-brand-border">
+                                        <th class="bg-white py-4 px-6 w-[30%] font-bold text-brand-navy">目的</th>
+                                        <td class="py-4 px-6 font-medium text-brand-gray">即戦力となる労働力の確保</td>
+                                    </tr>
+                                    <tr class="border-b border-brand-border">
+                                        <th class="bg-white py-4 px-6 font-bold text-brand-navy">即戦力性</th>
+                                        <td class="py-4 px-6 font-medium text-brand-gray">高（一定の技能と日本語を保有）</td>
+                                    </tr>
+                                    <tr class="border-b border-brand-border">
+                                        <th class="bg-white py-4 px-6 font-bold text-brand-navy">教育の必要性</th>
+                                        <td class="py-4 px-6 font-medium text-brand-gray">低〜中（現場特有のルール指導等）</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg-white py-4 px-6 font-bold text-brand-navy">長期性</th>
+                                        <td class="py-4 px-6 font-medium text-brand-gray">最長5年（2号で事実上の永住可）</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pt-2">
+                            <a href="specified-skills.html" class="inline-flex items-center text-brand-navy font-bold text-lg border-b-[3px] border-[#F2B705] hover:text-[#D9A404] transition-colors pb-1 group">
+                                特定技能について詳しく見る
+                                <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ⑤ 比較表 -->
+            <section id="sec-compare" class="bg-[#E8F1FA] rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 shadow-lg fade-up">
+                <div class="mb-10 border-b-4 border-brand-navy pb-5 text-center">
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight leading-tight">制度の比較表</h2>
+                </div>
+                
+                <div class="bg-white rounded-[14px] border border-brand-border overflow-x-auto shadow-sm">
+                    <table class="w-full text-left whitespace-nowrap min-w-[600px]">
+                        <thead>
+                            <tr class="bg-brand-navy text-white">
+                                <th class="py-4 px-6 font-bold w-1/4">比較項目</th>
+                                <th class="py-4 px-6 font-bold w-3/8 border-l border-white/20">育成就労制度</th>
+                                <th class="py-4 px-6 font-bold w-3/8 border-l border-white/20 bg-[#F2B705] text-brand-navy">特定技能</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b border-brand-border">
+                                <th class="bg-brand-light py-5 px-6 font-bold text-brand-navy">人材レベル</th>
+                                <td class="py-5 px-6 font-medium text-brand-gray border-l border-brand-border">未経験〜基礎レベル（講習あり）</td>
+                                <td class="py-5 px-6 font-bold text-brand-navy border-l border-brand-border">一定の技能・日本語レベル保有者</td>
+                            </tr>
+                            <tr class="border-b border-brand-border">
+                                <th class="bg-brand-light py-5 px-6 font-bold text-brand-navy">教育必要性</th>
+                                <td class="py-5 px-6 font-medium text-brand-gray border-l border-brand-border">高い（業務・生活全般のサポート）</td>
+                                <td class="py-5 px-6 font-bold text-brand-navy border-l border-brand-border">低い（ルールや現場指導のみで可）</td>
+                            </tr>
+                            <tr class="border-b border-brand-border">
+                                <th class="bg-brand-light py-5 px-6 font-bold text-brand-navy">即戦力性</th>
+                                <td class="py-5 px-6 font-medium text-brand-gray border-l border-brand-border">△ じっくり育てる</td>
+                                <td class="py-5 px-6 font-bold text-[#D9A404] border-l border-brand-border text-lg">◎ すぐに活躍できる</td>
+                            </tr>
+                            <tr>
+                                <th class="bg-brand-light py-5 px-6 font-bold text-brand-navy">長期性</th>
+                                <td class="py-5 px-6 font-medium text-brand-gray border-l border-brand-border">3年</td>
+                                <td class="py-5 px-6 font-bold text-brand-navy border-l border-brand-border">最長5年（2号で永住可）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ⑥ 受入れの流れ -->
+            <section id="sec-flow" class="bg-white rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 border border-brand-border shadow-lg fade-up">
+                <div class="mb-10 border-b-4 border-brand-navy pb-5">
+                    <span class="text-brand-gold font-en font-bold tracking-widest text-xs mb-2 block uppercase">Acceptance Flow</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight leading-tight">受入れの流れ</h2>
+                </div>
+                
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    <div class="flex items-start gap-4 p-4 border border-brand-border rounded-xl bg-[#F5F7FA]">
+                        <div class="w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center font-en font-black text-xl shrink-0">1</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-navy mb-1">お問い合わせ・ヒアリング</h3>
+                            <p class="text-brand-gray text-sm font-medium">企業様の現状の課題や、受入れの目的について詳しくお伺いします。</p>
+                        </div>
+                    </div>
+                    <div class="w-0.5 h-4 bg-brand-navy/20 ml-10"></div>
+                    
+                    <div class="flex items-start gap-4 p-4 border border-brand-border rounded-xl bg-[#F5F7FA]">
+                        <div class="w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center font-en font-black text-xl shrink-0">2</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-navy mb-1">人材要件整理・現地募集</h3>
+                            <p class="text-brand-gray text-sm font-medium">必要なスキルや人物像を明確にし、現地送出機関を通じて募集をかけます。</p>
+                        </div>
+                    </div>
+                    <div class="w-0.5 h-4 bg-brand-navy/20 ml-10"></div>
+                    
+                    <div class="flex items-start gap-4 p-4 border border-brand-border rounded-xl bg-[#F5F7FA]">
+                        <div class="w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center font-en font-black text-xl shrink-0">3</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-navy mb-1">面接・内定・契約</h3>
+                            <p class="text-brand-gray text-sm font-medium">現地面接（またはオンライン）を実施し、採用を決定します。</p>
+                        </div>
+                    </div>
+                    <div class="w-0.5 h-4 bg-brand-navy/20 ml-10"></div>
+                    
+                    <div class="flex items-start gap-4 p-4 border border-brand-border rounded-xl bg-[#F5F7FA]">
+                        <div class="w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center font-en font-black text-xl shrink-0">4</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-navy mb-1">在留資格申請・入国前研修</h3>
+                            <p class="text-brand-gray text-sm font-medium">複雑な書類申請は当組合が代行します。同時に現地で日本語やマナーの研修を行います。</p>
+                        </div>
+                    </div>
+                    <div class="w-0.5 h-4 bg-brand-navy/20 ml-10"></div>
+                    
+                    <div class="flex items-start gap-4 p-4 border-2 border-[#F2B705] rounded-xl bg-white shadow-md">
+                        <div class="w-12 h-12 bg-[#F2B705] text-white rounded-full flex items-center justify-center font-en font-black text-xl shrink-0">5</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-navy mb-1">入国・配属・定着支援</h3>
+                            <p class="text-brand-gray text-sm font-medium">入国後の生活セットアップから、現場での定期的なフォロー・監査まで一貫してサポートします。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="acceptance.html" class="inline-flex items-center text-brand-navy font-bold text-lg border-b-[3px] border-[#F2B705] hover:text-[#D9A404] transition-colors pb-1 group">
+                        受入れの流れを詳しく見る
+                        <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ⑦ 当組合の提案モデル -->
+            <section id="sec-model" class="bg-brand-navy text-white rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 shadow-lg fade-up relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 20px);"></div>
+                <div class="relative z-10">
+                    <div class="mb-12 border-b-4 border-[#F2B705] pb-5 text-center">
+                        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">当組合がご提案する<br class="sm:hidden">「長期戦力化モデル」</h2>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row justify-center items-stretch gap-4 max-w-3xl mx-auto">
+                        <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20 flex-1 flex flex-col justify-center">
+                            <span class="text-[#F2B705] font-bold text-sm mb-2 block">STEP 1</span>
+                            <span class="font-black text-xl">採用・配属</span>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center text-[#F2B705]">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20 flex-1 flex flex-col justify-center">
+                            <span class="text-[#F2B705] font-bold text-sm mb-2 block">STEP 2</span>
+                            <span class="font-black text-xl">育成就労で<br>3年間の教育</span>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center text-[#F2B705]">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                        </div>
+                        <div class="bg-[#F2B705] text-brand-navy rounded-xl p-6 text-center shadow-[0_4px_20px_rgba(242,183,5,0.4)] flex-1 flex flex-col justify-center transform lg:scale-105">
+                            <span class="font-black text-xs opacity-80 mb-2 block">GOAL</span>
+                            <span class="font-black text-xl">特定技能へ移行し<br>長期の戦力化</span>
+                        </div>
+                    </div>
+                    <p class="text-center mt-10 text-white/80 font-medium">このサイクルを回すことで現場に「教える文化」が根付き、将来にわたって安定した労働力確保が可能になります。</p>
+                </div>
+            </section>
+
+            <!-- ⑧ 建設業特化 -->
+            <section id="sec-construction" class="bg-white rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 border border-brand-border shadow-lg fade-up">
+                <div class="mb-12 border-b-4 border-brand-navy pb-5 text-center">
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight leading-tight">建設業特化だからできるサポート</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-[#F5F7FA] border border-brand-border rounded-xl p-8 text-center hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 bg-white border border-[#F2B705] rounded-full mx-auto flex items-center justify-center text-[#F2B705] mb-6 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-black text-brand-navy mb-3">安全管理の徹底</h3>
+                        <p class="text-brand-gray text-sm font-medium leading-relaxed">現場特有の危険予知や安全ルールの指導を、母国語で徹底的に行います。</p>
+                    </div>
+                    <div class="bg-[#F5F7FA] border border-brand-border rounded-xl p-8 text-center hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 bg-white border border-[#F2B705] rounded-full mx-auto flex items-center justify-center text-[#F2B705] mb-6 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-black text-brand-navy mb-3">現場適応・CCUS</h3>
+                        <p class="text-brand-gray text-sm font-medium leading-relaxed">キャリアアップシステムの登録代行や、現場監督とのコミュニケーション支援を実施します。</p>
+                    </div>
+                    <div class="bg-[#F5F7FA] border border-brand-border rounded-xl p-8 text-center hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 bg-white border border-[#F2B705] rounded-full mx-auto flex items-center justify-center text-[#F2B705] mb-6 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-black text-brand-navy mb-3">生活・長期定着</h3>
+                        <p class="text-brand-gray text-sm font-medium leading-relaxed">専用の相談窓口を設け、宿舎手配やメンタルケアまで、長く働ける環境を作ります。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ⑨ FAQ -->
+            <section id="sec-faq" class="bg-[#E8F1FA] rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 shadow-lg fade-up">
+                <div class="mb-10 border-b-4 border-brand-navy pb-5 text-center">
+                    <span class="text-brand-gold font-en font-bold tracking-widest text-xs mb-2 block uppercase">FAQ</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight leading-tight">よくあるご質問</h2>
+                </div>
+                
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="bg-white rounded-xl border border-brand-border p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-brand-navy flex items-start gap-3">
+                            <span class="text-[#F2B705] font-black font-en text-xl mt-0.5">Q.</span>
+                            受入れにかかる費用はどのくらいですか？
+                        </h3>
+                        <div class="mt-4 pl-8 border-l-2 border-brand-light text-brand-gray text-sm font-medium leading-relaxed">
+                            <span class="text-brand-navy font-black font-en text-lg mr-2">A.</span>
+                            国や職種、人数によって異なりますが、初期費用と月額の管理費用が発生します。詳細なシミュレーションは無料相談にて個別にお出ししております。
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-brand-border p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-brand-navy flex items-start gap-3">
+                            <span class="text-[#F2B705] font-black font-en text-xl mt-0.5">Q.</span>
+                            日本語はどの程度話せますか？
+                        </h3>
+                        <div class="mt-4 pl-8 border-l-2 border-brand-light text-brand-gray text-sm font-medium leading-relaxed">
+                            <span class="text-brand-navy font-black font-en text-lg mr-2">A.</span>
+                            入国前に約半年間の日本語教育を行っており、現場での基本的な指示が理解できるN4レベル相当を目標としています。入国後も当組合のスタッフがサポートします。
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-brand-border p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-brand-navy flex items-start gap-3">
+                            <span class="text-[#F2B705] font-black font-en text-xl mt-0.5">Q.</span>
+                            途中で辞めてしまう（失踪する）リスクはありますか？
+                        </h3>
+                        <div class="mt-4 pl-8 border-l-2 border-brand-light text-brand-gray text-sm font-medium leading-relaxed">
+                            <span class="text-brand-navy font-black font-en text-lg mr-2">A.</span>
+                            事前の面接で意欲の高い人材を厳選し、入国後も毎月訪問してヒアリングを実施しているため、失踪率は極めて低く、非常に高い定着率を誇っています。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ⑩ CTA -->
+            <section class="bg-white rounded-[20px] py-16 px-6 sm:py-24 sm:px-14 border-[4px] border-[#F2B705] shadow-[0_10px_30px_rgba(242,183,5,0.2)] fade-up text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[#F2B705]/5"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-navy mb-6 leading-tight">
+                        まずは御社の課題を<br class="sm:hidden">お聞かせください
+                    </h2>
+                    <p class="text-brand-gray font-medium text-base mb-10 max-w-2xl mx-auto leading-relaxed">
+                        「何人受け入れられるか知りたい」「費用感が合えば検討したい」など、具体的な検討に入る前のご相談も大歓迎です。専任スタッフが丁寧にお答えします。
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 max-w-2xl mx-auto">
+                        <a href="index.html#contact" class="bg-[#F2B705] text-white font-bold w-full sm:w-auto px-16 min-h-[64px] rounded-[10px] shadow-[0_8px_24px_rgba(242,183,5,0.4)] hover:bg-[#D9A404] hover:-translate-y-1 transform transition-all flex justify-center items-center gap-3 text-xl">
+                            <svg class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span class="whitespace-nowrap">無料相談はこちら</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Footer Lite -->
+    <div id="app-footer"></div>
+    <div id="app-mobile-cta"></div>
+
+    <script src="components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.fade-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
