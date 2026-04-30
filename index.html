@@ -130,14 +130,16 @@
                     「誠実・堅実・安心」をモットーに。<br>
                     労働力確保を明確な目的とした「育成就労」と「特定技能」に完全フォーカスし、企業様と外国人材がともに成長できる環境づくりを支えます。
                 </p>
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 mt-4">
+                    <a href="#contact"
+                        class="bg-brand-gold text-white px-8 py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-[#D9A404] transition-all shadow-lg flex items-center justify-center gap-2 min-h-[54px] w-full sm:w-auto">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        まずは無料相談する
+                    </a>
                     <a href="#services"
-                        class="bg-brand-gold text-white px-8 py-4 rounded-md font-bold text-sm sm:text-base hover:bg-yellow-600 transition-colors shadow-lg flex items-center gap-2">
+                        class="bg-white text-brand-navy border-2 border-white px-8 py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-transparent hover:text-white transition-all shadow-lg flex items-center justify-center gap-2 min-h-[54px] w-full sm:w-auto">
                         制度について詳しく見る
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                     </a>
                 </div>
             </div>
@@ -152,19 +154,19 @@
     </section>
 
     <!-- メインコンテンツエリア (2カラムレイアウト) -->
-    <div class="bg-brand-light py-12 lg:py-20 border-y border-brand-border relative">
+    <div class="bg-brand-light py-16 lg:py-24 border-y border-brand-border relative">
         <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #003366 0, #003366 1px, transparent 1px, transparent 10px);"></div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-10 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-14 relative z-10">
             
             <!-- 左サイドバー (280px固定) -->
             <aside id="app-sidebar" class="hidden lg:block w-full lg:w-[280px] shrink-0"></aside>
 
-            <!-- 右メインコンテンツ (約75%) -->
-            <main class="flex-1 space-y-12">
+            <!-- 右メインコンテンツ -->
+            <main class="flex-1 space-y-16 lg:px-4">
                 
                 <!-- News Section -->
-                <section id="news" class="bg-white rounded-lg border border-brand-border shadow-sm p-6 sm:p-10 fade-up">
+                <section id="news" class="bg-white rounded-xl border border-brand-border shadow-sm p-8 sm:p-12 fade-up">
                     <div class="flex flex-wrap justify-between items-end mb-8 border-b-2 border-brand-navy pb-4 gap-4">
                         <h2 class="text-2xl font-black text-brand-navy">お知らせ <span class="text-sm font-en text-brand-gray font-normal ml-2">News</span></h2>
                         <a href="news.html" class="text-sm text-brand-navy font-bold hover:text-brand-gold transition-colors flex items-center">
@@ -185,119 +187,154 @@
                 </section>
 
                 <!-- Services Section -->
-                <section id="services" class="fade-up delay-1">
-                    <div class="mb-8 border-b-2 border-brand-navy pb-4">
-                        <h2 class="text-2xl font-black text-brand-navy">当組合の3つの柱 <span class="text-sm font-en text-brand-gray font-normal ml-2 uppercase tracking-widest">Our Services</span></h2>
+                <section id="services" class="bg-[#E8F1FA] rounded-xl p-8 sm:p-12 border border-blue-100 shadow-sm fade-up delay-1">
+                    <div class="mb-10 border-b-2 border-brand-navy pb-4">
+                        <h2 class="text-2xl font-black text-brand-navy">当組合の3つの柱 <span class="text-sm font-en text-brand-navy/60 font-normal ml-2 uppercase tracking-widest">Our Services</span></h2>
                     </div>
                     
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- カード 1 -->
-                        <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col">
-                            <div class="h-40 overflow-hidden relative border-b border-brand-light">
-                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_1_1776311133285.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col">
+                    <div class="space-y-10">
+                        <!-- 柱 1: テキスト左(6) 画像右(4) -->
+                        <div class="flex flex-col lg:flex-row gap-8 bg-white p-8 rounded-lg shadow-sm border border-brand-border items-center hover:shadow-md transition-shadow">
+                            <div class="w-full lg:w-[60%] flex flex-col justify-center">
                                 <span class="text-brand-gold text-[10px] font-bold mb-2 block">基礎から即戦力へ</span>
-                                <h3 class="text-lg font-bold text-brand-navy mb-3">育成就労制度</h3>
-                                <p class="text-brand-gray text-xs leading-relaxed mb-5 flex-1">
+                                <h3 class="text-xl font-bold text-brand-navy mb-4">育成就労制度</h3>
+                                <p class="text-brand-gray text-sm leading-relaxed mb-6">
                                     旧技能実習から代わる新制度。実践的な現場スキルと日本語能力を育成し、即戦力へと引き上げる伴走型のサポートを行います。
                                 </p>
-                                <a href="training-system.html" class="inline-flex items-center text-brand-navy font-bold text-xs hover:text-brand-gold transition-colors">
-                                    仕組みを見る
-                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                                </a>
+                                <div>
+                                    <a href="training-system.html" class="inline-flex items-center bg-brand-navy text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-brand-gold transition-colors">
+                                        仕組みを見る
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-[40%] h-48 lg:h-56 relative rounded-md overflow-hidden border border-brand-light shrink-0">
+                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_1_1776311133285.png" class="w-full h-full object-cover">
                             </div>
                         </div>
                         
-                        <!-- カード 2 -->
-                        <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col">
-                            <div class="h-40 overflow-hidden relative border-b border-brand-light">
-                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_2_1776311148803.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <!-- 柱 2: 画像左(4) テキスト右(6) -->
+                        <div class="flex flex-col-reverse lg:flex-row gap-8 bg-white p-8 rounded-lg shadow-sm border border-brand-border items-center hover:shadow-md transition-shadow">
+                            <div class="w-full lg:w-[40%] h-48 lg:h-56 relative rounded-md overflow-hidden border border-brand-light shrink-0">
+                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_2_1776311148803.png" class="w-full h-full object-cover">
                             </div>
-                            <div class="p-6 flex-1 flex flex-col">
+                            <div class="w-full lg:w-[60%] flex flex-col justify-center">
                                 <span class="text-brand-gold text-[10px] font-bold mb-2 block">育成就労のゴール</span>
-                                <h3 class="text-lg font-bold text-brand-navy mb-3">特定技能へ移行</h3>
-                                <p class="text-brand-gray text-xs leading-relaxed mb-5 flex-1">
+                                <h3 class="text-xl font-bold text-brand-navy mb-4">特定技能へ移行</h3>
+                                <p class="text-brand-gray text-sm leading-relaxed mb-6">
                                     最長5年間活躍できる「特定技能水準」へのシームレスな移行を実現。最初から特定技能として受入れるプログラムもご用意。
                                 </p>
-                                <a href="specified-skills.html" class="inline-flex items-center text-brand-navy font-bold text-xs hover:text-brand-gold transition-colors">
-                                    詳細を見る
-                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                                </a>
+                                <div>
+                                    <a href="specified-skills.html" class="inline-flex items-center bg-brand-navy text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-brand-gold transition-colors">
+                                        詳細を見る
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- カード 3 -->
-                        <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col sm:col-span-2 lg:col-span-1">
-                            <div class="h-40 overflow-hidden relative border-b border-brand-light">
-                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_3_1776311164218.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col">
+                        <!-- 柱 3: テキスト左(6) 画像右(4) -->
+                        <div class="flex flex-col lg:flex-row gap-8 bg-white p-8 rounded-lg shadow-sm border border-brand-border items-center hover:shadow-md transition-shadow">
+                            <div class="w-full lg:w-[60%] flex flex-col justify-center">
                                 <span class="text-brand-gold text-[10px] font-bold mb-2 block">選ばれる理由</span>
-                                <h3 class="text-lg font-bold text-brand-navy mb-3">誠実・堅実な支援</h3>
-                                <p class="text-brand-gray text-xs leading-relaxed mb-5 flex-1">
+                                <h3 class="text-xl font-bold text-brand-navy mb-4">誠実・堅実な支援</h3>
+                                <p class="text-brand-gray text-sm leading-relaxed mb-6">
                                     法令遵守を第一とした厳正な監査と定期的な巡回。母国語対応スタッフを配置し、企業と人材間のコミュニケーションを強力に支援。
                                 </p>
-                                <a href="acceptance.html#follow" class="inline-flex items-center text-brand-navy font-bold text-xs hover:text-brand-gold transition-colors">
-                                    サポート内容
-                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                                </a>
+                                <div>
+                                    <a href="acceptance.html#follow" class="inline-flex items-center bg-brand-navy text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-brand-gold transition-colors">
+                                        サポート内容
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-[40%] h-48 lg:h-56 relative rounded-md overflow-hidden border border-brand-light shrink-0">
+                                <img src="file:///C:/Users/masa0/.gemini/antigravity/brain/1a2f82b6-8ca9-4b14-9db2-e6e7644cbe37/service_card_3_1776311164218.png" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Strengths Section (Boxed) -->
-                <section id="strengths" class="bg-brand-navy rounded-xl p-8 sm:p-10 shadow-lg relative overflow-hidden fade-up">
+                <!-- Strengths Section -->
+                <section id="strengths" class="bg-white rounded-xl p-8 sm:p-12 border border-brand-border shadow-sm relative overflow-hidden fade-up">
                     <div class="relative z-10">
-                        <div class="mb-8">
+                        <div class="mb-10 border-b-2 border-brand-navy pb-4">
                             <span class="text-brand-gold font-en font-bold tracking-widest text-[10px] block mb-2 uppercase">Why Choose Us</span>
-                            <h2 class="text-2xl font-black text-white mb-2">他の組合にはない、3つの強み</h2>
-                            <div class="w-12 h-1 bg-brand-gold"></div>
+                            <h2 class="text-2xl font-black text-brand-navy mb-2">他の組合にはない、3つの強み</h2>
                         </div>
-                        <div class="space-y-6">
+                        <div class="space-y-8">
                             <!-- 強み1 -->
-                            <div class="bg-white/5 border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors flex flex-col sm:flex-row gap-6 items-start">
-                                <div class="w-14 h-14 shrink-0 bg-brand-gold/20 border border-brand-gold rounded-lg flex items-center justify-center">
-                                    <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start pb-8 border-b border-brand-border border-dashed">
+                                <div class="w-full lg:w-[70%] flex gap-6">
+                                    <div class="w-14 h-14 shrink-0 bg-brand-light border border-brand-border rounded-lg flex items-center justify-center">
+                                        <svg class="w-7 h-7 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-black text-brand-navy mb-3">建設業特化</h3>
+                                        <p class="text-brand-gray font-medium text-sm leading-relaxed">
+                                            建設業のみに絞り込んだ専門知識。建設キャリアアップシステム（CCUS）への対応、職種別の独自カリキュラム、現場監督との連携など、業種特化だからこそできる手厚いサポートを提供します。
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="text-xl font-black text-white mb-2">建設業特化</h3>
-                                    <p class="text-white/70 font-medium text-sm leading-relaxed">
-                                        建設業のみに絞り込んだ専門知識。建設キャリアアップシステム（CCUS）への対応、職種別の独自カリキュラム、現場監督との連携など、業種特化だからこそできる手厚いサポートを提供します。
-                                    </p>
+                                <div class="w-full lg:w-[30%] flex items-center justify-start lg:justify-end mt-2 lg:mt-0">
+                                     <a href="about.html" class="inline-flex items-center text-brand-navy font-bold text-sm border-b-2 border-brand-gold hover:text-brand-gold transition-colors pb-1">組合概要を見る<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
                                 </div>
                             </div>
                             <!-- 強み2 -->
-                            <div class="bg-white/5 border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors flex flex-col sm:flex-row gap-6 items-start">
-                                <div class="w-14 h-14 shrink-0 bg-brand-gold/20 border border-brand-gold rounded-lg flex items-center justify-center">
-                                    <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start pb-8 border-b border-brand-border border-dashed">
+                                <div class="w-full lg:w-[70%] flex gap-6">
+                                    <div class="w-14 h-14 shrink-0 bg-brand-light border border-brand-border rounded-lg flex items-center justify-center">
+                                        <svg class="w-7 h-7 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-black text-brand-navy mb-3">教育の質</h3>
+                                        <p class="text-brand-gray font-medium text-sm leading-relaxed">
+                                            入国前から始まる日本語・技能教育、入国後の現場OJT、定期的な技能評価まで。母国語対応スタッフが常駐し、生活面のサポートも含めた「育てる」体制を持ちます。
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="text-xl font-black text-white mb-2">教育の質</h3>
-                                    <p class="text-white/70 font-medium text-sm leading-relaxed">
-                                        入国前から始まる日本語・技能教育、入国後の現場OJT、定期的な技能評価まで。母国語対応スタッフが常駐し、生活面のサポートも含めた「育てる」体制を持ちます。
-                                    </p>
+                                <div class="w-full lg:w-[30%] flex items-center justify-start lg:justify-end mt-2 lg:mt-0">
+                                     <a href="training-system.html" class="inline-flex items-center text-brand-navy font-bold text-sm border-b-2 border-brand-gold hover:text-brand-gold transition-colors pb-1">教育体制を見る<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
                                 </div>
                             </div>
                             <!-- 強み3 -->
-                            <div class="bg-white/5 border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors flex flex-col sm:flex-row gap-6 items-start">
-                                <div class="w-14 h-14 shrink-0 bg-brand-gold/20 border border-brand-gold rounded-lg flex items-center justify-center">
-                                    <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start">
+                                <div class="w-full lg:w-[70%] flex gap-6">
+                                    <div class="w-14 h-14 shrink-0 bg-brand-light border border-brand-border rounded-lg flex items-center justify-center">
+                                        <svg class="w-7 h-7 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-black text-brand-navy mb-3">コンプライアンス体制</h3>
+                                        <p class="text-brand-gray font-medium text-sm leading-relaxed">
+                                            外部監査法人による定期監査を実施。入管法・建設業法への完全準拠を第一に、企業様が安心して受入れを継続できる透明性の高い運営を貫きます。トラブル時も24時間体制で対応。
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="text-xl font-black text-white mb-2">コンプライアンス体制</h3>
-                                    <p class="text-white/70 font-medium text-sm leading-relaxed">
-                                        外部監査法人による定期監査を実施。入管法・建設業法への完全準拠を第一に、企業様が安心して受入れを継続できる透明性の高い運営を貫きます。トラブル時も24時間体制で対応。
-                                    </p>
+                                <div class="w-full lg:w-[30%] flex items-center justify-start lg:justify-end mt-2 lg:mt-0">
+                                     <a href="compliance.html" class="inline-flex items-center text-brand-navy font-bold text-sm border-b-2 border-brand-gold hover:text-brand-gold transition-colors pb-1">法令遵守の取り組み<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 7:3 Middle CTA -->
+                        <div class="mt-12 bg-[#E8F1FA] p-8 sm:p-10 rounded-xl border border-brand-border flex flex-col lg:flex-row gap-8 items-center text-center lg:text-left">
+                            <div class="w-full lg:w-[65%]">
+                                <h3 class="text-xl font-black text-brand-navy mb-2">専任スタッフが丁寧にお答えします</h3>
+                                <p class="text-sm text-brand-gray font-medium">受入れの要件や費用、期間など、些細な疑問でもお気軽にご相談ください。</p>
+                            </div>
+                            <div class="w-full lg:w-[35%] flex justify-end">
+                                <a href="#contact" class="bg-brand-gold text-white font-bold w-full min-h-[50px] rounded-lg shadow-md hover:bg-[#D9A404] transition-all flex justify-center items-center gap-2 text-sm px-6">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    無料相談はこちら
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
                 <!-- Stats Section -->
-                <section id="stats" class="bg-white rounded-lg border border-brand-border p-8 shadow-sm fade-up delay-2">
+                <section id="stats" class="bg-[#E8F1FA] rounded-xl border border-brand-border p-8 sm:p-12 shadow-sm fade-up delay-2">
                     <div class="mb-8 border-b-2 border-brand-navy pb-4">
                         <h2 class="text-2xl font-black text-brand-navy">数字で見る実績 <span class="text-sm font-en text-brand-gray font-normal ml-2 uppercase tracking-widest">Our Track Record</span></h2>
                     </div>
@@ -560,6 +597,31 @@
                     <div class="absolute bottom-3 left-3 text-white text-xs font-bold tracking-wide opacity-80">建設現場での協働
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ボトムCTAセクション -->
+    <section class="bg-brand-navy py-16 lg:py-24 relative overflow-hidden border-t-4 border-brand-gold">
+        <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 20px);"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <span class="text-brand-gold font-en font-bold tracking-widest text-[10px] block mb-3 uppercase">Contact Us</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-white mb-6 leading-tight">
+                外国人材の採用や制度に関する疑問など、<br class="hidden sm:block">
+                まずはお気軽にご相談ください。
+            </h2>
+            <p class="text-white/80 font-medium text-sm sm:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+                KHS協同組合の専門スタッフが、御社の課題や状況に合わせた最適なご提案・サポート内容を丁寧にご案内いたします。
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="#contact" class="bg-brand-gold text-white font-bold w-full sm:w-auto px-12 min-h-[60px] rounded-lg shadow-lg hover:bg-[#D9A404] transition-all flex justify-center items-center gap-2 text-base sm:text-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    無料相談はこちら
+                </a>
+                <a href="tel:0480000000" class="text-white flex items-center justify-center gap-2 font-en font-black text-2xl hover:text-brand-gold transition-colors min-h-[60px] px-6">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+                    048-000-0000
+                </a>
             </div>
         </div>
     </section>

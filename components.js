@@ -66,8 +66,8 @@ function renderSidebar() {
     // helper for active class
     const getLinkClass = (path) => {
         return currentPath === path 
-            ? "px-5 py-4 border-b border-brand-light text-brand-navy font-bold bg-brand-light transition-colors flex items-center justify-between group"
-            : "px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group";
+            ? "px-5 py-4 border-b border-brand-light text-brand-navy font-bold bg-[#E8F1FA] border-l-4 !border-l-brand-gold transition-all flex items-center justify-between group"
+            : "px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-[#E8F1FA] hover:text-brand-navy border-l-4 border-l-transparent transition-all flex items-center justify-between group";
     };
 
     sidebarContainer.innerHTML = `
@@ -86,14 +86,14 @@ function renderSidebar() {
                 </nav>
             </div>
             <div class="space-y-4 mt-8">
-                <div class="bg-brand-navy rounded-xl p-5 text-center shadow-lg relative overflow-hidden">
-                    <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 10px);"></div>
-                    <h4 class="text-white font-bold mb-4 relative z-10 text-sm">外国人材の採用について<br>お気軽にご相談ください</h4>
-                    <a href="${currentPath === 'index.html' ? '#contact' : 'index.html#contact'}" class="cta-button w-full !py-3 !text-sm relative z-10 mb-4 flex justify-center items-center gap-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div class="bg-white rounded-xl p-6 text-center shadow-md border border-brand-border relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-[0.02]" style="background-image: repeating-linear-gradient(45deg, #003366 0, #003366 1px, transparent 1px, transparent 10px);"></div>
+                    <h4 class="text-brand-navy font-black mb-4 relative z-10 text-sm leading-relaxed">外国人材の採用について<br>お気軽にご相談ください</h4>
+                    <a href="${currentPath === 'index.html' ? '#contact' : 'index.html#contact'}" class="bg-brand-gold text-white font-bold w-full min-h-[54px] rounded-lg shadow-md hover:bg-[#D9A404] transition-all flex justify-center items-center gap-2 relative z-10 mb-4 text-sm">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         無料相談はこちら
                     </a>
-                    <a href="tel:0480000000" class="text-white flex items-center justify-center gap-1.5 font-en font-bold text-lg relative z-10 hover:text-brand-gold transition-colors">
+                    <a href="tel:0480000000" class="text-brand-navy flex items-center justify-center gap-1.5 font-en font-black text-lg relative z-10 hover:text-brand-gold transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
                         048-000-0000
                     </a>
@@ -166,7 +166,7 @@ function renderMobileCTA() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
     ctaContainer.innerHTML = `
-    <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t border-brand-border shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-50 flex h-16 pb-safe">
+    <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t border-brand-border shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-50 flex h-[60px] pb-safe">
         <a href="tel:0480000000" class="flex-1 flex flex-col items-center justify-center text-brand-navy border-r border-brand-border hover:bg-gray-50 active:bg-gray-100 transition-colors">
             <svg class="w-5 h-5 mb-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
             <span class="text-[11px] font-bold">電話相談</span>
