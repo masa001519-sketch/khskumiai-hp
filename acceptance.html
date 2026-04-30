@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -23,9 +23,9 @@
                     },
                     colors: {
                         brand: {
-                            navy: '#003366',
-                            gold: '#D4AF37',
-                            light: '#F8FAFC',
+                            navy: '#0F3B66',
+                            gold: '#F2B705',
+                            light: '#F5F9FF',
                             gray: '#475569',
                             border: '#E2E8F0'
                         }
@@ -57,41 +57,7 @@
 <body class="overflow-x-hidden font-sans">
 
     <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white/98 backdrop-blur-md z-50 shadow-sm border-b border-brand-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 border-b border-brand-border/40">
-                <a href="index.html" class="flex flex-col">
-                    <span class="text-brand-navy font-black text-xl tracking-tight leading-none">KHS協同組合</span>
-                    <span class="text-brand-gold text-[9px] font-en font-bold tracking-widest mt-0.5">NEW ERA OF HR SYSTEMS</span>
-                </a>
-                <nav class="hidden lg:flex items-center gap-1 text-sm font-bold">
-                    <a href="training-system.html" class="px-3 py-2 text-brand-navy hover:text-brand-gold transition-colors">育成就労制度</a><span class="text-brand-border">|</span>
-                    <a href="specified-skills.html" class="px-3 py-2 text-brand-navy hover:text-brand-gold transition-colors">特定技能</a><span class="text-brand-border">|</span>
-                    <a href="acceptance.html" class="px-3 py-2 text-brand-gold">受入れの流れ</a><span class="text-brand-border">|</span>
-                    <a href="cases.html" class="px-3 py-2 text-brand-navy hover:text-brand-gold transition-colors">事例紹介</a><span class="text-brand-border">|</span>
-                    <a href="compliance.html" class="px-3 py-2 text-brand-navy hover:text-brand-gold transition-colors">法令遵守</a><span class="text-brand-border">|</span>
-                    <a href="about.html" class="px-3 py-2 text-brand-navy hover:text-brand-gold transition-colors">組合概要</a><span class="text-brand-border">|</span>
-                    <a href="documents.html" class="px-3 py-2 text-brand-navy hover:text-brand-gold transition-colors">書類DL</a>
-                </nav>
-                <div class="hidden lg:flex items-center gap-4">
-                    <a href="tel:0480000000" class="text-lg font-en font-black text-brand-navy hover:text-brand-gold transition-colors">048-000-0000</a>
-                    <a href="index.html#contact" class="bg-brand-navy text-white px-5 py-2.5 font-bold text-sm hover:bg-brand-gold transition-colors">お問い合わせ</a>
-                </div>
-                <button id="mobileMenuBtn" class="lg:hidden text-brand-navy p-2"><svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-            </div>
-            <div id="mobileMenu" class="lg:hidden hidden py-4">
-                <nav class="flex flex-col gap-1 text-sm font-bold">
-                    <a href="training-system.html" class="px-3 py-2 text-brand-navy">育成就労制度</a>
-                    <a href="specified-skills.html" class="px-3 py-2 text-brand-navy">特定技能</a>
-                    <a href="acceptance.html" class="px-3 py-2 text-brand-gold">受入れの流れ</a>
-                    <a href="cases.html" class="px-3 py-2 text-brand-navy">事例紹介</a>
-                    <a href="compliance.html" class="px-3 py-2 text-brand-navy">法令遵守</a>
-                    <a href="about.html" class="px-3 py-2 text-brand-navy">組合概要</a>
-                    <a href="documents.html" class="px-3 py-2 text-brand-navy">書類DL</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <div id="app-header"></div>
 
     <!-- Page Hero -->
     <section class="pt-40 pb-20 bg-brand-navy flex items-end border-b border-brand-navy/10 text-white">
@@ -108,37 +74,11 @@
         <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #003366 0, #003366 1px, transparent 1px, transparent 10px);"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-10 relative z-10">
             <!-- 左サイドバー -->
-            <aside class="hidden lg:block w-full lg:w-72 shrink-0">
-                <div class="sticky top-24 space-y-6">
-                    <div class="bg-white rounded-lg border border-brand-border shadow-sm overflow-hidden fade-up">
-                        <div class="bg-brand-navy text-white font-bold py-4 px-5 tracking-widest font-en uppercase text-center border-b-[3px] border-brand-gold">
-                            Contents
-                        </div>
-                        <nav class="flex flex-col text-sm">
-                            <a href="training-system.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">育成就労制度<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-                            <a href="specified-skills.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">特定技能<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-                            <a href="acceptance.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold bg-brand-light transition-colors flex items-center justify-between group">受入れの流れ<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-                            <a href="cases.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">事例紹介<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-                            <a href="compliance.html" class="px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">法令遵守<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-                            <a href="about.html" class="px-5 py-4 text-brand-navy font-bold hover:bg-brand-light transition-colors flex items-center justify-between group">組合概要<svg class="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-                        </nav>
-                    </div>
-                    <div class="space-y-4 fade-up delay-1">
-                        <a href="index.html#contact" class="flex items-center gap-4 bg-brand-navy text-white rounded-lg p-5 hover:bg-brand-gold transition-colors shadow-md group">
-                            <div class="bg-white/10 p-3 rounded-md"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
-                            <div><span class="block font-bold text-lg leading-tight mb-0.5">お問い合わせ</span><span class="block text-[10px] text-white/70">ご相談・お見積りはこちら</span></div>
-                        </a>
-                        <a href="documents.html" class="flex items-center gap-4 bg-white border border-brand-border text-brand-navy rounded-lg p-5 hover:border-brand-gold transition-colors shadow-sm group">
-                            <div class="bg-brand-light p-3 rounded-md group-hover:bg-brand-gold/10 transition-colors"><svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
-                            <div><span class="block font-bold text-lg leading-tight mb-0.5">資料ダウンロード</span><span class="block text-[10px] text-brand-gray">パンフレット・各種書類</span></div>
-                        </a>
-                    </div>
-                </div>
-            </aside>
+            <aside id="app-sidebar" class="hidden lg:block w-full lg:w-[280px] shrink-0"></aside>
             <main class="flex-1 space-y-12">
 
     <!-- 受入れの流れ -->
-    <section class="bg-white rounded-lg border border-brand-border shadow-sm p-6 sm:p-10 fade-up">
+    <section class="bg-white rounded-2xl border border-brand-border shadow-sm p-6 sm:p-10 fade-up">
         <div>
             <div class="mb-16 reveal">
                 <h2 class="text-4xl md:text-5xl mb-8">受入れまでのフロー</h2>
@@ -183,10 +123,10 @@
     </section>
 
     <!-- フォロー体制 -->
-    <section id="follow" class="bg-brand-navy text-white rounded-lg shadow-sm p-6 sm:p-10 fade-up relative overflow-hidden">
+    <section id="follow" class="bg-brand-navy text-white rounded-2xl shadow-md p-6 sm:p-10 fade-up relative overflow-hidden">
         <div class="reveal">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-[60%]">
                     <h2 class="text-4xl md:text-5xl mb-12">実直なフォロー体制</h2>
                     <p class="text-xl text-white/50 leading-loose mb-12">
                         人材の定着は、日々のコミュニケーションにかかっています。<br>
@@ -203,15 +143,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="h-[600px] border-[12px] border-white/5 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?auto=format&fit=crop&q=80&w=1500" class="w-full h-full object-cover grayscale brightness-75">
+                <div class="w-full lg:w-[40%] h-[400px] lg:h-[600px] border-8 border-white/10 rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?auto=format&fit=crop&q=80&w=1500" class="w-full h-full object-cover grayscale mix-blend-multiply opacity-80 bg-brand-navy">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 指定された「実績」セクション -->
-    <section class="bg-white rounded-lg border border-brand-border shadow-sm p-6 sm:p-10 fade-up">
+    <section class="bg-white rounded-2xl border border-brand-border shadow-sm p-6 sm:p-10 fade-up">
         <div class="reveal">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl mb-4 italic">受入れの実績</h2>
@@ -235,7 +175,7 @@
     </section>
 
     <!-- 送出機関専属提携セクション -->
-    <section id="partner" class="bg-brand-navy text-white rounded-lg shadow-sm p-6 sm:p-10 fade-up relative overflow-hidden">
+    <section id="partner" class="bg-brand-navy text-white rounded-2xl shadow-md p-6 sm:p-10 fade-up relative overflow-hidden">
         <div>
             <div class="reveal mb-12">
                 <div class="text-brand-gold text-xs font-en font-black tracking-widest mb-3 uppercase">Exclusive Partnership</div>
@@ -244,17 +184,17 @@
                 <p class="text-white/70 font-medium max-w-2xl text-sm leading-relaxed">当組合は、特定の送出機関との専属提携関係を結んでいます。一般的な褒出しでは局内で候補の品質に朝いがありますが、専属提携により深層の連携と候補者の質を高い水準で保ています。</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="reveal bg-white/5 border border-white/10 p-8">
+                <div class="reveal bg-white/5 border border-white/20 p-8 rounded-xl backdrop-blur-sm">
                     <div class="text-brand-gold text-xs font-en font-black tracking-widest mb-4 uppercase">Selection</div>
                     <h3 class="text-xl font-black text-white mb-4">华面での直接選考</h3>
                     <p class="text-white/70 text-sm font-medium leading-relaxed">送出機関スタッフと右辺に連携し、現地での面接選考に関わります。倈兒な語力・安全意識・勤労意欲の高い候補者を事先に絞り込みます。</p>
                 </div>
-                <div class="reveal bg-white/5 border border-white/10 p-8">
+                <div class="reveal bg-white/5 border border-white/20 p-8 rounded-xl backdrop-blur-sm">
                     <div class="text-brand-gold text-xs font-en font-black tracking-widest mb-4 uppercase">Pre-Education</div>
                     <h3 class="text-xl font-black text-white mb-4">入国前教育の監修</h3>
                     <p class="text-white/70 text-sm font-medium leading-relaxed">入国前の日本語・安全教育について、切層の要求水準を送出機関に明示し、教育内容を監修しています。入国時点でN4相当の日本語力を目指します。</p>
                 </div>
-                <div class="reveal bg-white/5 border border-white/10 p-8">
+                <div class="reveal bg-white/5 border border-white/20 p-8 rounded-xl backdrop-blur-sm">
                     <div class="text-brand-gold text-xs font-en font-black tracking-widest mb-4 uppercase">Pipeline</div>
                     <h3 class="text-xl font-black text-white mb-4">安定的な人材パイプライン</h3>
                     <p class="text-white/70 text-sm font-medium leading-relaxed">専属提携により、年間を通じた安定した人材パイプラインを確保しています。「人が集まらない」時期でもスムーズに受入れを継続できます。</p>
@@ -264,7 +204,7 @@
     </section>
 
     <!-- CCUS対応セクション -->
-    <section id="ccus" class="bg-white rounded-lg border border-brand-border shadow-sm p-6 sm:p-10 fade-up">
+    <section id="ccus" class="bg-white rounded-2xl border border-brand-border shadow-sm p-6 sm:p-10 fade-up">
         <div>
             <div class="reveal mb-12">
                 <div class="text-brand-gold text-xs font-en font-black tracking-widest mb-3 uppercase">CCUS Support</div>
@@ -273,30 +213,30 @@
                 <p class="text-brand-gray font-medium max-w-2xl text-sm leading-relaxed">建設業で外国人材を受け入れる際、CCUSへの登録・管理は不可欠です。当組合は登録サポートからカード管理まで一括対応し、企業様の手間を大幅に削減します。</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="reveal bg-white border border-brand-border p-8">
+                <div class="reveal bg-white border border-brand-border p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                     <h3 class="text-xl font-black text-brand-navy mb-4 flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold text-white flex items-center justify-center text-sm font-black">1</span>
+                        <span class="w-8 h-8 bg-brand-gold text-white flex items-center justify-center text-sm font-black rounded-md">1</span>
                         CCUSカード登録サポート
                     </h3>
                     <p class="text-brand-gray text-sm font-medium leading-relaxed">就労者全員のCCUSカード取得手続きを当組合が代行します。必要書類の収集から申請まで一括対応。企業様の首のわずわずいを解消します。</p>
                 </div>
-                <div class="reveal bg-white border border-brand-border p-8">
+                <div class="reveal bg-white border border-brand-border p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                     <h3 class="text-xl font-black text-brand-navy mb-4 flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold text-white flex items-center justify-center text-sm font-black">2</span>
+                        <span class="w-8 h-8 bg-brand-gold text-white flex items-center justify-center text-sm font-black rounded-md">2</span>
                         就労履歴の自動記録
                     </h3>
                     <p class="text-brand-gray text-sm font-medium leading-relaxed">現場での就労実績をCCUSカードで自動累積。自分のスキルアップの証明が可視化され、就労者のモチベーション向上にもつながります。</p>
                 </div>
-                <div class="reveal bg-white border border-brand-border p-8">
+                <div class="reveal bg-white border border-brand-border p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                     <h3 class="text-xl font-black text-brand-navy mb-4 flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold text-white flex items-center justify-center text-sm font-black">3</span>
+                        <span class="w-8 h-8 bg-brand-gold text-white flex items-center justify-center text-sm font-black rounded-md">3</span>
                         元請負流対応建設業への対応
                     </h3>
                     <p class="text-brand-gray text-sm font-medium leading-relaxed">将来的にCCUS登録が义務化される見通しの中、先行して対応しておくことで、元請負流対応建設業との取引がすむやかになります。</p>
                 </div>
-                <div class="reveal bg-white border border-brand-border p-8">
+                <div class="reveal bg-white border border-brand-border p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                     <h3 class="text-xl font-black text-brand-navy mb-4 flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold text-white flex items-center justify-center text-sm font-black">4</span>
+                        <span class="w-8 h-8 bg-brand-gold text-white flex items-center justify-center text-sm font-black rounded-md">4</span>
                         データ管理の一元化
                     </h3>
                     <p class="text-brand-gray text-sm font-medium leading-relaxed">CCUSデータと当組合の独自管理システムを連携。就労状況・資格経歴・在留期限を一の画面で確認できます。</p>
@@ -310,63 +250,7 @@
     </div>
 
     <!-- フッター -->
-    <footer class="bg-brand-navy text-white pt-16 pb-8 border-t-8 border-brand-gold">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- 組合情報 -->
-                <div class="col-span-2">
-                    <h2 class="text-2xl font-black mb-6 tracking-wide">KHS協同組合</h2>
-                    <p class="text-white/80 text-sm leading-relaxed mb-8">
-                        〒330-0000<br>
-                        埼玉県さいたま市大宮区〇〇 1-2-3<br>
-                        TEL: <span class="font-en">048-000-0000</span> / FAX: <span class="font-en">048-000-0001</span><br>
-                        <span class="mt-4 text-xs font-bold tracking-widest inline-block text-white/60 bg-black/20 px-3 py-1 rounded-sm">監理団体許可番号：許2400000000 <span class="mx-3">|</span> 登録支援機関登録番号：24登-000000</span>
-                    </p>
-                    <a href="#contact" class="inline-flex items-center bg-white text-brand-navy px-8 py-3 rounded-sm font-bold hover:bg-brand-gold hover:text-white transition-all shadow-md">
-                        メールでお問い合わせ
-                    </a>
-                </div>
-                
-                <!-- リンク群 -->
-                <div>
-                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">組合について</h3>
-                    <ul class="space-y-4 text-sm text-white/80 font-medium">
-                        <li><a href="about.html" class="hover:text-brand-gold transition-colors block">組合概要</a></li>
-                        <li><a href="access.html" class="hover:text-brand-gold transition-colors block">アクセス</a></li>
-                        <li><a href="recruit.html" class="hover:text-brand-gold transition-colors block">採用情報</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">事業内容</h3>
-                    <ul class="space-y-3 text-sm text-white/80 font-medium">
-                        <li><a href="training-system.html" class="hover:text-brand-gold transition-colors block">育成就労制度</a></li>
-                        <li><a href="specified-skills.html" class="hover:text-brand-gold transition-colors block">特定技能</a></li>
-                        <li><a href="acceptance.html" class="hover:text-brand-gold transition-colors block">受入れの流れ</a></li>
-                        <li><a href="cases.html" class="hover:text-brand-gold transition-colors block">受入れ事例</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-brand-gold font-bold mb-6 pb-2 border-b border-white/20">組合について</h3>
-                    <ul class="space-y-3 text-sm text-white/80 font-medium">
-                        <li><a href="about.html" class="hover:text-brand-gold transition-colors block">組合概要</a></li>
-                        <li><a href="compliance.html" class="hover:text-brand-gold transition-colors block">コンプライアンス</a></li>
-                        <li><a href="dx.html" class="hover:text-brand-gold transition-colors block">DX・デジタル化</a></li>
-                        <li><a href="documents.html" class="hover:text-brand-gold transition-colors block">書類DL</a></li>
-                        <li><a href="faq.html" class="hover:text-brand-gold transition-colors block">よくあるご質問</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-medium">
-                <div class="mb-4 md:mb-0 space-x-6">
-                    <a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a>
-                    <a href="links.html" class="hover:text-white transition-colors">リンク集</a>
-                </div>
-                <p class="font-en tracking-wider">&copy; 2026 KHS Cooperative Association. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="app-footer"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -379,5 +263,8 @@
             reveals.forEach(el => observer.observe(el));
         });
     </script>
+    <!-- スマホ専用：画面下部固定CTA -->
+    <div id="app-mobile-cta"></div>
+    <script src="components.js"></script>
 </body>
 </html>

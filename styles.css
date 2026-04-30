@@ -5,21 +5,21 @@
 
 /* ---- カラーパレット ---- */
 :root {
-    --color-navy:       #003366;
-    --color-gold:       #C9A227;   /* やや落ち着いたゴールド */
-    --color-gold-hover: #B8911F;
+    --color-navy:       #0F3B66;   /* 指定ネイビー */
+    --color-gold:       #F2B705;   /* 指定イエロー（CTA用） */
+    --color-gold-hover: #D9A404;
     --color-bg:         #FFFFFF;
-    --color-bg-soft:    #F8FAFC;   /* セクション交互用の薄グレー */
-    --color-bg-warm:    #F4F6F9;
-    --color-text:       #003366;
-    --color-text-muted: #475569;
-    --color-border:     #E8EDF2;   /* 薄く細い境界線 */
-    --color-border-light: #F0F4F8;
+    --color-bg-soft:    #F5F9FF;   /* サブ背景（薄ブルー1） */
+    --color-bg-warm:    #E8F1FA;   /* サブ背景（薄ブルー2） */
+    --color-text:       #333333;   /* 本文テキスト */
+    --color-text-muted: #666666;
+    --color-border:     #E2E8F0;   /* 薄く細い境界線 */
+    --color-border-light: #F1F5F9;
     --radius-sm:   6px;
     --radius-md:   10px;
     --radius-lg:   14px;
-    --radius-btn:  8px;   /* ボタン角丸 */
-    --radius-card: 10px;  /* カード角丸 */
+    --radius-btn:  50px;  /* CTAの角丸（丸みをもたせる） */
+    --radius-card: 12px;  /* カード角丸 */
 }
 
 /* ---- リセット：直角を全廃、角丸を解禁 ---- */
@@ -33,14 +33,19 @@ button, a[class*="bg-brand"], a[class*="btn"] {
     border-radius: var(--radius-btn) !important;
 }
 
-/* ---- 見出しのウェイトを少し抑える ---- */
-h1 { font-weight: 800; letter-spacing: -0.04em; line-height: 1.15; }
-h2 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; }
-h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.3; }
+/* ---- 見出しのウェイトを調整 ---- */
+h1 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; }
+h2 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.3; }
+h3 { font-weight: 700; letter-spacing: -0.01em; line-height: 1.4; }
 
-/* ---- 本文のリズム ---- */
-body { line-height: 2.0; color: var(--color-text); }
-p    { line-height: 1.9; }
+/* ---- 本文のリズムとフォントサイズ ---- */
+body { 
+    line-height: 1.8; 
+    color: var(--color-text); 
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+}
+p { line-height: 1.8; }
 
 /* ---- 境界線をより薄く細く ---- */
 .border, [class*="border-brand-border"],
@@ -103,19 +108,27 @@ header a[href*="#contact"]:hover {
    ボタン（共通）
    ============================================ */
 
-/* プライマリ CTA（ゴールド） */
+/* プライマリ CTA（イエロー） */
 a.bg-brand-gold,
-button.bg-brand-gold {
+button.bg-brand-gold,
+.cta-button {
+    background-color: var(--color-gold) !important;
+    color: #FFFFFF !important;
     border-radius: var(--radius-btn) !important;
-    padding: 0.85rem 2rem !important;
+    padding: 1rem 3rem !important; /* 大きめ */
     font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    text-align: center;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 12px rgba(201, 162, 39, 0.30);
+    box-shadow: 0 4px 15px rgba(242, 183, 5, 0.4);
+    display: inline-block;
 }
 a.bg-brand-gold:hover,
-button.bg-brand-gold:hover {
+button.bg-brand-gold:hover,
+.cta-button:hover {
+    background-color: var(--color-gold-hover) !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(201, 162, 39, 0.38);
+    box-shadow: 0 6px 20px rgba(242, 183, 5, 0.5);
 }
 
 /* セカンダリ CTA（ネイビー） */
