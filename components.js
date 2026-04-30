@@ -63,11 +63,10 @@ function renderSidebar() {
 
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     
-    // helper for active class
     const getLinkClass = (path) => {
         return currentPath === path 
-            ? "px-5 py-4 border-b border-brand-light text-brand-navy font-bold bg-[#E8F1FA] border-l-4 !border-l-brand-gold transition-all flex items-center justify-between group"
-            : "px-5 py-4 border-b border-brand-light text-brand-navy font-bold hover:bg-[#E8F1FA] hover:text-brand-navy border-l-4 border-l-transparent transition-all flex items-center justify-between group";
+            ? "px-5 py-4 border-b border-brand-border text-brand-navy font-black bg-[#E8F1FA] border-l-[6px] !border-l-[#F2B705] transition-all flex items-center justify-between group"
+            : "px-5 py-4 border-b border-brand-border text-brand-navy font-bold hover:bg-[#E8F1FA] hover:text-brand-navy border-l-[6px] border-l-transparent transition-all flex items-center justify-between group";
     };
 
     sidebarContainer.innerHTML = `
@@ -89,7 +88,7 @@ function renderSidebar() {
                 <div class="bg-white rounded-xl p-6 text-center shadow-md border border-brand-border relative overflow-hidden">
                     <div class="absolute inset-0 opacity-[0.02]" style="background-image: repeating-linear-gradient(45deg, #003366 0, #003366 1px, transparent 1px, transparent 10px);"></div>
                     <h4 class="text-brand-navy font-black mb-4 relative z-10 text-sm leading-relaxed">外国人材の採用について<br>お気軽にご相談ください</h4>
-                    <a href="${currentPath === 'index.html' ? '#contact' : 'index.html#contact'}" class="bg-brand-gold text-white font-bold w-full min-h-[56px] rounded-xl shadow-md hover:bg-[#D9A404] transition-all flex justify-center items-center gap-2 relative z-10 mb-4 text-sm px-4">
+                    <a href="${currentPath === 'index.html' ? '#contact' : 'index.html#contact'}" class="bg-[#F2B705] text-white font-bold w-full min-h-[60px] rounded-[10px] shadow-[0_6px_20px_rgba(242,183,5,0.4)] hover:bg-[#D9A404] hover:-translate-y-1 transform transition-all flex justify-center items-center gap-2 relative z-10 mb-4 text-base px-4">
                         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         <span class="whitespace-nowrap">無料相談はこちら</span>
                     </a>
@@ -166,14 +165,10 @@ function renderMobileCTA() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
     ctaContainer.innerHTML = `
-    <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t border-brand-border shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-50 flex h-[60px] pb-safe">
-        <a href="tel:0480000000" class="flex-1 flex flex-col items-center justify-center text-brand-navy border-r border-brand-border hover:bg-gray-50 active:bg-gray-100 transition-colors">
-            <svg class="w-5 h-5 mb-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
-            <span class="text-[11px] font-bold">電話相談</span>
-        </a>
-        <a href="${currentPath === 'index.html' ? '#contact' : 'index.html#contact'}" class="flex-1 flex flex-col items-center justify-center bg-brand-gold text-white hover:bg-[#D9A404] active:bg-[#C29204] transition-colors">
-            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            <span class="text-[11px] font-bold">無料相談</span>
+    <div class="lg:hidden fixed bottom-4 left-4 right-4 z-50">
+        <a href="${currentPath === 'index.html' ? '#contact' : 'index.html#contact'}" class="bg-[#F2B705] text-white font-bold w-full h-[60px] rounded-[10px] shadow-[0_8px_24px_rgba(242,183,5,0.4)] hover:bg-[#D9A404] active:bg-[#C29204] transition-colors flex justify-center items-center gap-3 text-lg">
+            <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span class="whitespace-nowrap">無料相談はこちら</span>
         </a>
     </div>
     `;
